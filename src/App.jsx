@@ -1,21 +1,24 @@
-import { useState } from 'react'
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Footer from "./components/Footer";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [value, setValue] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold text-gray-800">Hemkdev's portfolio</h1>
-      <div className="mt-4">
-        <button 
-          onClick={() => setCount((count) => count + 1)}
-          className="bg-slate-400 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded"
-        >
-          count is {count}
-        </button>
-      </div>
+    <div
+      className={`min-h-screen ${value ? "bg-white text-black" : "bg-black text-white"} transition-colors duration-300`}
+    >
+      <Navbar value={value} setValue={setValue} />
+      <Hero value={value} />
+      <About />
+      <Projects />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
