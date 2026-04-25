@@ -3,7 +3,6 @@
 export const PERSON = {
     name: "Lucas Hemkemeier",
     title: "Junior Backend Developer",
-    bio: "Olá! Sou um desenvolvedor backend apaixonado por criar soluções eficientes e escaláveis. Com experiência em Node.js, Express e bancos de dados relacionais, estou sempre buscando aprender novas tecnologias e aprimorar minhas habilidades. Estou aberto a oportunidades de trabalho e projetos desafiadores. Vamos construir algo incrível juntos!",
     avatar: "https://github.com/hemkdev.png",
     email: "lucas.hemkemeier007@gmail.com",
     social: [
@@ -27,40 +26,35 @@ export const PERSON = {
 
 export const WORK_EXPERIENCE = [
     {
-        company: "Empresa XYZ",
-        role: "Estagiário de Desenvolvimento Backend",
-        Period: "Junho 2023 - Dezembro 2023",
-        description: "Desenvolvimento de APIs RESTful utilizando Node.js e Express. Participação em projetos de integração com bancos de dados relacionais e otimização de consultas SQL. Colaboração com equipes multidisciplinares para entrega de soluções eficientes.",
-        tags: ["Node.js", "Express", "SQL", "APIs RESTful"],
-        highlights: [
-            "Desenvolvimento de uma API para gerenciamento de usuários, resultando em uma redução de 30% no tempo de resposta.",
-            "Implementação de autenticação JWT, aumentando a segurança da aplicação.",
-        ],
+        company: "Tupy S.A.",
+        role: "Industrial Apprentice - Logistics",
+        Period: "Mar 2026 - Present",
+        description: "I currently work at Tupy as an Industrial Apprentice, supporting the Shipping team with third-party and subcontracting routines. In my daily work, I use management systems and build spreadsheets that turn data into clear indicators, helping the team keep control of processes and make faster decisions.",
+        tags: ["Excel"],
     },
 ];
 
 export const FORMATION = [
     {
-        institution: "Universidade ABC",
-        degree: "Bacharelado em Ciência da Computação",
-        period: "Março 2020 - Dezembro 2024",
-        description: "Durante minha graduação, adquiri conhecimentos sólidos em algoritmos, estruturas de dados, desenvolvimento de software e bancos de dados. Participei de projetos acadêmicos que envolveram o desenvolvimento de aplicações web e mobile, utilizando tecnologias como JavaScript, React e Node.js.",
-        tags: ["Bacharelado", "Ciência da Computação", "Desenvolvimento de Software"],
+        institution: "Centro Universitário Católica de Santa Catarina",
+        degree: "Bachelor's Degree in Software Engineering",
+        period: "Feb 2026 - Dez 2029",
+        description: "",
     },
 ];
 
 export const PROJECTS = [
     {
-        title: "Projeto de Gerenciamento de Tarefas",
-        description: "Desenvolvimento de uma aplicação web para gerenciamento de tarefas utilizando React para o frontend e Node.js com Express para o backend. A aplicação permite aos usuários criar, editar e excluir tarefas, além de organizar as tarefas em categorias.",
-        tags: ["React", "Node.js", "Express", "MongoDB"],
-        url: "https://github.com/hemkdev/task-manager"
+        title: "Tremzz - railway operations management platform",
+        description: "Creation of an intuitive web platform to optimize the management of railway operations, allowing efficient control of routes, users, and other components involving railway logistics. The project was developed using PHP for the backend, MySQL for the database, JavaScript for interactivity, and MQTT for real-time communication between different types of sensors and the application.",
+        tags: ["PHP", "MySQL", "JavaScript", "MQTT"],
+        url: "https://github.com/hemkdev/tremzz"
     },
     {
-        title: "API de Blog",
-        description: "Criação de uma API RESTful para um sistema de blog utilizando Node.js e Express. A API permite operações CRUD para posts, comentários e usuários, além de implementar autenticação JWT para segurança.",
-        tags: ["Node.js", "Express", "JWT", "SQL"],
-        url: "https://github.com/hemkdev/blog-api"
+        title: "Habit tracker - application for habit monitoring",
+        description: "Creation of a command-line application for tracking habits, allowing users to register and monitor their daily habits. The application was built using Python for the backend, with data storage in JSON files. The project includes features for adding, removing, and viewing habits, as well as generating progress reports over time.",
+        tags: ["Python", "JSON"],
+        url: "https://github.com/hemkdev/habit-tracker"
     },
 ];
 
@@ -75,4 +69,4 @@ export const SKILLS = [
     "Testes Unitários",
 ];
 
-export const ABOUT_TEXT = "I'm a software developer with a passion for creating innovative solutions. I have experience in various programming languages and frameworks, and I enjoy working on projects that challenge me to learn and grow.";
+export const ABOUT_TEXT = "Software developer with a back-end soul, focused on writing clean, reusable and maintainable code. Systems Development technician and currently pursuing a Software Engineering degree. I enjoy crafting practical solutions for everyday challenges and believe good code is built through collaboration and shared knowledge.";

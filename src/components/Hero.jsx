@@ -5,13 +5,10 @@ function Hero({ value }) {
     <section className="mx-auto flex h-full w-full max-w-3xl items-center justify-between gap-8 px-6 py-12 flex-col md:flex-row">
       <div>
         <h1 className="text-left text-2xl font-semibold leading-tight md:text-3xl">
-          Hello, I'm {PERSON.name}
+          {PERSON.name}
         </h1>
         <p className="mt-2 text-left text-sm opacity-90">
           {PERSON.title}
-        </p>
-        <p className="mt-4 text-left text-sm opacity-90">
-          {PERSON.bio}
         </p>
 
         <div className="mt-4 flex items-center">
