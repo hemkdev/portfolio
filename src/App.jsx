@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
-import Footer from "./components/Footer";
 
 function App() {
   const [value, setValue] = useState(false);
@@ -16,7 +15,6 @@ function App() {
       <Hero value={value} />
       <About />
       <Projects />
-      <Footer />
     </div>
   );
 }
