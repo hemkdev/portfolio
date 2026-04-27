@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div
-      className={`min-h-screen ${value ? "bg-white text-black" : "bg-black text-white"} transition-colors duration-300`}
+      className={`min-h-screen ${value ? "bg-white text-[#111111]" : "bg-[#111111] text-[#EDEDEA]"} transition-colors duration-300`}
     >
       <Navbar value={value} setValue={setValue} />
       <Hero value={value} />

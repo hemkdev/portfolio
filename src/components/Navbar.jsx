@@ -10,10 +10,10 @@ function Navbar({ value, setValue }) {
           <button onClick={toggleTheme}>Theme</button>
         </li>
         <li>
-          <a href="/">Home</a>
+          <a href="#">Home</a>
         </li>
         <li>
-          <a href="/contact">Contact</a>
+          <a href="#">Contact</a>
         </li>
       </ul>
     </nav>
