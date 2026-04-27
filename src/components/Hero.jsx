@@ -1,6 +1,6 @@
 import { PERSON } from "../data/portfolio";
 
-function Hero({ value }) {
+function Hero() {
   return (
     <section className="mx-auto flex h-full w-full max-w-3xl items-center justify-between gap-8 px-6 py-12 flex-col md:flex-row">
       <div>
