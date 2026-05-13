@@ -11,7 +11,7 @@ function Education({ value }) {
             className={`rounded-lg border p-5 transition-colors duration-300 ${
               value
                 ? "border-gray-200 bg-gray-50/60"
-                : "border-white/[0.08] bg-white/[0.03]"
+                : "border-white/8 bg-white/3"
             }`}
           >
             <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">

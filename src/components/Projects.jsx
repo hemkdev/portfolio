@@ -12,7 +12,7 @@ function Projects({ value }) {
             className={`group rounded-lg border p-5 transition-colors duration-300 ${
               value
                 ? "border-gray-200 bg-gray-50/60 hover:border-gray-300"
-                : "border-white/[0.08] bg-white/[0.03] hover:border-white/[0.15]"
+                : "border-white/8 bg-white/3 hover:border-white/15"
             }`}
           >
             <div className="flex items-start justify-between gap-4">

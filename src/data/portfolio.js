@@ -29,7 +29,7 @@ export const WORK_EXPERIENCE = [
         company: "Tupy S.A.",
         role: "Industrial Apprentice - Logistics",
         Period: "Mar 2026 - May 2026",
-        description: "I worked at Tupy as an Industrial Apprentice, supporting the Shipping team with third-party and subcontracting routines. In my daily work, I use management systems and build spreadsheets that turn data into clear indicators, helping the team keep control of processes and make faster decisions.",
+        description: "I worked at Tupy as an Industrial Apprentice, supporting the Shipping team with third-party and subcontracting routines. In my daily work, I used management systems and builded spreadsheets that turned data into clear indicators, helping the team keep control of processes and make faster decisions.",
         tags: ["Excel"],
     },
 ];

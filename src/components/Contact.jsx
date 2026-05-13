@@ -5,7 +5,7 @@ function Contact({ value }) {
     <section id="contact" className="mx-auto w-full max-w-3xl px-6 pb-20 pt-12">
       <div
         className={`rounded-lg border p-8 text-center transition-colors duration-300 ${
-          value ? "border-gray-200" : "border-white/[0.08]"
+          value ? "border-gray-200" : "border-white/8"
         }`}
       >
         <h2 className="text-2xl font-semibold">Get in touch</h2>

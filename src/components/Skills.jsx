@@ -11,7 +11,7 @@ function Skills({ value }) {
             className={`rounded-md border px-3 py-1.5 text-sm transition-colors duration-300 ${
               value
                 ? "border-gray-200 bg-gray-50 text-gray-700"
-                : "border-white/[0.1] bg-white/[0.04] text-[#EDEDEA]"
+                : "border-white/1 bg-white/4 text-[#EDEDEA]"
             }`}
           >
             {skill}

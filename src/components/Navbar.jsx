@@ -8,7 +8,7 @@ function Navbar({ value, setValue }) {
       className={`sticky top-0 z-50 border-b backdrop-blur-sm transition-colors duration-300 ${
         value
           ? "border-gray-100 bg-white/90"
-          : "border-white/[0.08] bg-[#111111]/90"
+          : "border-white/8 bg-[#111111]/90"
       }`}
     >
       <div className="mx-auto flex max-w-3xl items-center justify-center px-6 py-4">
