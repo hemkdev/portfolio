@@ -28,8 +28,8 @@ export const WORK_EXPERIENCE = [
     {
         company: "Tupy S.A.",
         role: "Industrial Apprentice - Logistics",
-        Period: "Mar 2026 - Present",
-        description: "I currently work at Tupy as an Industrial Apprentice, supporting the Shipping team with third-party and subcontracting routines. In my daily work, I use management systems and build spreadsheets that turn data into clear indicators, helping the team keep control of processes and make faster decisions.",
+        Period: "Mar 2026 - May 2026",
+        description: "I worked at Tupy as an Industrial Apprentice, supporting the Shipping team with third-party and subcontracting routines. In my daily work, I use management systems and build spreadsheets that turn data into clear indicators, helping the team keep control of processes and make faster decisions.",
         tags: ["Excel"],
     },
 ];
@@ -59,14 +59,15 @@ export const PROJECTS = [
 ];
 
 export const SKILLS = [
-    "Node.js",
-    "Express",
-    "SQL",
-    "MongoDB",
+    "Python",
+    "C",
+    "Java",
     "JavaScript",
+    "Node.js",
+    "SQL",
+    "PostgreSQL",
     "Git",
-    "Docker",
-    "Testes Unitários",
+    "Figma",
 ];
 
 export const ABOUT_TEXT = "Software developer with a back-end soul, focused on writing clean, reusable and maintainable code. Systems Development technician and currently pursuing a Software Engineering degree. I enjoy crafting practical solutions for everyday challenges and believe good code is built through collaboration and shared knowledge.";
