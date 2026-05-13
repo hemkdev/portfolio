@@ -2,7 +2,11 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Skills from "./components/Skills";
+import Experience from "./components/Experience";
+import Education from "./components/Education";
 import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 function App() {
   const [value, setValue] = useState(false);
@@ -10,12 +14,18 @@ function App() {
 
   return (
     <div
-      className={`min-h-screen ${value ? "bg-white text-[#111111]" : "bg-[#111111] text-[#EDEDEA]"} transition-colors duration-300`}
+      className={`min-h-screen transition-colors duration-300 ${
+        value ? "bg-white text-[#111111]" : "bg-[#111111] text-[#EDEDEA]"
+      }`}
     >
       <Navbar value={value} setValue={setValue} />
-      <Hero />
-      <About />
+      <Hero value={value} />
+      <About value={value} />
+      <Skills value={value} />
+      <Experience value={value} />
+      <Education value={value} />
       <Projects value={value} />
+      <Contact value={value} />
     </div>
   );
 }
