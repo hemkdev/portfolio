@@ -1,8 +1,57 @@
 @import "tailwindcss";
 
-html,
-body,
-#root {
-  min-height: 100%;
-  font-family: "Space Grotesk", sans-serif;
+/* Tokens de cor na lógica do iOS: fundo agrupado, célula, separador fino, rótulo secundário */
+@theme {
+  --font-sans: "Instrument Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-fundo: #f2f2f7;
+  --color-celula: #ffffff;
+  --color-texto: #111114;
+  --color-suave: #6e6e73;
+  --color-separador: #d1d1d6;
+  --color-barra: rgba(242, 242, 247, 0.78);
+  --color-botao: #e5e5ea;
+  --color-vivo: #34c759;
+  --color-neutro: #aeaeb2;
+}
+
+/* Tema escuro: definido no <html data-theme> pelo script inline do index.html e pelo App */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-fundo: #000000;
+  --color-celula: #1c1c1e;
+  --color-texto: #f5f5f7;
+  --color-suave: #98989d;
+  --color-separador: #38383a;
+  --color-barra: rgba(0, 0, 0, 0.72);
+  --color-botao: #2c2c2e;
+  --color-vivo: #30d158;
+  --color-neutro: #636366;
+}
+
+body {
+  margin: 0;
+  background: var(--color-fundo);
+  color: var(--color-texto);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-texto);
+  outline-offset: 2px;
+}
+
+/* Lista agrupada (estilo Ajustes): separador fino que começa a 16px da esquerda */
+.linha + .linha::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 16px;
+  right: 0;
+  border-top: 0.5px solid var(--color-separador);
 }
