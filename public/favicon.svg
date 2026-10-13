@@ -1,8 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <defs>
-    <clipPath id="avatarClip">
-      <circle cx="32" cy="32" r="32" />
-    </clipPath>
-  </defs>
-  <image href="/favicon.png" width="64" height="64" clip-path="url(#avatarClip)" preserveAspectRatio="xMidYMid slice" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+  <style>
+    .h { stroke: #111114; }
+    .p { fill: #34c759; }
+    @media (prefers-color-scheme: dark) { .h { stroke: #f5f5f7; } .p { fill: #30d158; } }
+  </style>
+  <path class="h" d="M44 20 V136 M44 100 C44 74 60 66 78 66 C98 66 108 78 108 100 V136" fill="none" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle class="p" cx="122" cy="28" r="18"/>
 </svg>

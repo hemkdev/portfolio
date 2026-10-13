@@ -1,65 +1,54 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import { PERSON } from "../data/portfolio";
+import Logo from "./Logo";
 
-function Navbar({ value, setValue }) {
-  const toggleTheme = () => setValue(!value);
+// Barra translúcida: vazia no topo; ao rolar mostra símbolo e nome, como o título grande do iOS
+function Navbar({ t, lang, setLang, theme, setTheme }) {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 90);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const toggle = "cursor-pointer rounded-full bg-botao px-3 py-1 font-mono text-[13px] font-medium";
 
   return (
-    <nav
-      className={`sticky top-0 z-50 border-b backdrop-blur-sm transition-colors duration-300 ${
-        value
-          ? "border-gray-100 bg-white/90"
-          : "border-white/8 bg-[#111111]/90"
+    <header
+      className={`sticky top-0 z-10 border-b-[0.5px] bg-barra backdrop-blur-[20px] backdrop-saturate-[1.8] transition-colors duration-200 ${
+        scrolled ? "border-separador" : "border-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-3xl items-center justify-center px-6 py-4">
-        <ul className="flex items-center gap-5 text-sm">
-          <li>
-            <a
-              href="#about"
-              className={`transition-opacity duration-200 hover:opacity-100 ${value ? "opacity-60" : "opacity-50"}`}
-            >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              href="#skills"
-              className={`transition-opacity duration-200 hover:opacity-100 ${value ? "opacity-60" : "opacity-50"}`}
-            >
-              Skills
-            </a>
-          </li>
-          <li>
-            <a
-              href="#projects"
-              className={`transition-opacity duration-200 hover:opacity-100 ${value ? "opacity-60" : "opacity-50"}`}
-            >
-              Projects
-            </a>
-          </li>
-          <li>
-            <a
-              href="#contact"
-              className={`transition-opacity duration-200 hover:opacity-100 ${value ? "opacity-60" : "opacity-50"}`}
-            >
-              Contact
-            </a>
-          </li>
-          <li>
-            <button
-              onClick={toggleTheme}
-              className={`cursor-pointer rounded-full border px-3 py-1 text-xs transition-colors duration-300 ${
-                value
-                  ? "border-gray-300 hover:bg-gray-100"
-                  : "border-white/20 hover:bg-white/10"
-              }`}
-            >
-              {value ? "Dark" : "Light"}
-            </button>
-          </li>
-        </ul>
+      <div className="mx-auto flex h-13 max-w-170 items-center gap-2 px-4">
+        <span
+          aria-hidden={!scrolled}
+          className={`flex items-center gap-2 text-[17px] font-semibold transition-opacity duration-200 ${
+            scrolled ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <Logo className="size-4.5" />
+          {PERSON.name}
+        </span>
+        <button
+          type="button"
+          onClick={() => setLang(lang === "pt" ? "en" : "pt")}
+          aria-label={t.ui.langSwitch}
+          className={`${toggle} ml-auto`}
+        >
+          {lang === "pt" ? "EN" : "PT"}
+        </button>
+        <button
+          type="button"
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          aria-label={theme === "dark" ? t.ui.themeToLight : t.ui.themeToDark}
+          className={toggle}
+        >
+          {theme === "dark" ? "☀" : "☾"}
+        </button>
       </div>
-    </nav>
+    </header>
   );
 }
 

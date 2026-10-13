@@ -1,91 +1,198 @@
-// Dados pessoais
+// Dados do portfolio. Tudo o que é texto visível vive aqui, em PT e EN.
 
 export const PERSON = {
     name: "Lucas Hemkemeier",
-    title: "Fullstack Developer",
-    avatar: "https://github.com/hemkdev.png",
     email: "lucas.hemkemeier007@gmail.com",
-    social: [
-        { 
-        name: "GitHub",
-        url: "https://github.com/hemkdev",
-        icon: "github",
-        },
-        {
-        name: "LinkedIn",
-        url: "https://www.linkedin.com/in/lucas-hemkemeier",
-        icon: "linkedin",
-        },
-        {
-        name: "Email",
-        url: "mailto:lucas.hemkemeier007@gmail.com",
-        icon: "mail",
-        },
-    ],
+    github: "https://github.com/hemkdev",
+    avatar: "https://github.com/hemkdev.png",
+    linkedin: "https://www.linkedin.com/in/hemkemeier",
 };
 
-export const WORK_EXPERIENCE = [
-    {
-        company: "Origetec",
-        role: "Fullstack Developer",
-        Period: "May 2026 - Present",
-        description: "I own features end to end — understanding the problem behind the request, designing the solution, building it with TypeScript, Node and Python, and running it in production with Docker, GitHub Actions and Cloudflare. My daily work includes ERP API integrations and internal automation tools used by the team every day.",
-        tags: ["TypeScript", "Node.js", "Python", "Docker", "GitHub Actions", "Cloudflare"],
-    },
-    {
-        company: "Tupy S.A.",
-        role: "Industrial Apprentice - Logistics",
-        Period: "Mar 2026 - May 2026",
-        description: "I worked at Tupy as an Industrial Apprentice, supporting the Shipping team with third-party and subcontracting routines. In my daily work, I used management systems and built spreadsheets that turned data into clear indicators, helping the team keep control of processes and make faster decisions.",
-        tags: ["Excel"],
-    },
-];
+const REPO = {
+    racha: "https://github.com/hemkdev/racha-api",
+    tremzz: "https://github.com/hemkdev/tremzz",
+    tremzzIot: "https://github.com/hemkdev/tremzz-iot",
+    folio: "https://github.com/miguelrcha/folio",
+    timezonefinder: "https://github.com/jannikmi/timezonefinder",
+};
 
-export const FORMATION = [
-    {
-        institution: "Centro Universitário Católica de Santa Catarina",
-        degree: "Bachelor's Degree in Software Engineering",
-        period: "Feb 2026 - Dec 2029",
-        description: "",
-    },
-];
+// TODO: status por projeto (no ar, em deploy, encerrado) entra junto com a feature maior de status.
+// TODO: Tino entra quando estiver no ar (deploy na VM Oracle + página de produto).
 
-export const PROJECTS = [
-    {
-        title: "Tremzz - railway operations management platform",
-        description: "Creation of an intuitive web platform to optimize the management of railway operations, allowing efficient control of routes, users, and other components involving railway logistics. The project was developed using PHP for the backend, MySQL for the database, JavaScript for interactivity, and MQTT for real-time communication between different types of sensors and the application.",
-        tags: ["PHP", "MySQL", "JavaScript", "MQTT"],
-        url: "https://github.com/hemkdev/tremzz"
+export const CONTENT = {
+    pt: {
+        meta: {
+            title: "Lucas Hemkemeier — Desenvolvedor Backend",
+            description: "Desenvolvedor backend com Python e Django, em Joinville, SC.",
+        },
+        role: "Desenvolvedor Backend Júnior · Joinville, SC",
+        about: "Desenvolvedor backend com Python e Django. Desde maio de 2026 respondo pelo sistema de gestão em produção de uma empresa de Joinville, do modelo de dados ao deploy. Técnico em Desenvolvimento de Sistemas pelo SENAI e cursando Engenharia de Software na Católica SC. Hoje estudando Java e Spring Boot.",
+        ui: {
+            email: "E-mail",
+            themeToDark: "Ativar tema escuro",
+            themeToLight: "Ativar tema claro",
+            langSwitch: "Switch to English",
+        },
+        sections: {
+            projects: "Projetos",
+            openSource: "Open source",
+            experience: "Experiência",
+            skills: "Skills",
+            education: "Formação",
+        },
+        projects: [
+            {
+                title: "racha-api",
+                description: "API REST para locação de quadras esportivas: grade de horários do dia, compra de vários horários numa transação só, pedidos, paginação e filtros.",
+                stack: ["Django", "PostgreSQL"],
+                // TODO: adicionar racha.hemk.dev depois do deploy
+                links: [{ label: "repositório", url: REPO.racha }],
+            },
+            {
+                title: "Tremzz",
+                description: "Plataforma web de gestão de operações ferroviárias: rotas, usuários e comunicação em tempo real com sensores via MQTT. Projeto em equipe da formação técnica no SENAI, em que fui responsável pela modelagem de dados, pelo backend, pelas telas, pela integração MQTT e pela montagem dos sensores.",
+                stack: ["PHP", "MySQL", "JavaScript", "MQTT"],
+                links: [
+                    { label: "repositório", url: REPO.tremzz },
+                    { label: "repositório iot", url: REPO.tremzzIot },
+                ],
+            },
+        ],
+        openSource: [
+            {
+                title: "folio",
+                description: "15 pull requests mergeados no folio, que gera portfólio e currículo a partir do perfil do GitHub: features, cobertura de testes, configuração de CI, tratamento de erro, correções de segurança e acessibilidade.",
+                links: [
+                    { label: "meufolio.dev", url: "https://meufolio.dev" },
+                    { label: "repositório", url: REPO.folio },
+                ],
+            },
+            {
+                title: "timezonefinder",
+                description: "Biblioteca Python de fuso horário por coordenada, com cerca de 5 milhões de downloads mensais. 4 pull requests aceitos e 2 issues resolvidas, com crédito nominal no CHANGELOG: automação do pipeline de atualização dos dados de fronteira, da detecção de versão nova ao merge automático com a integração contínua aprovada.",
+                links: [
+                    { label: "repositório", url: REPO.timezonefinder },
+                    { label: "CHANGELOG", url: `${REPO.timezonefinder}/blob/master/CHANGELOG.rst` },
+                ],
+            },
+        ],
+        experience: [
+            {
+                role: "Desenvolvedor Full-Stack (Django · Next.js)",
+                company: "Origetec",
+                period: "mai/2026 – presente",
+                note: "Cargo interno: Integrador de IA",
+                bullets: [
+                    "Projetei e mantenho a API REST do sistema de gestão em Django e DRF, com autenticação JWT e regras de negócio numa camada de serviço.",
+                    "Modelei o banco em PostgreSQL, com as regras críticas em constraints e bloqueio transacional onde há concorrência.",
+                    "Montei o CI/CD no GitHub Actions e opero a produção: Docker, Nginx, VM Ubuntu, Cloudflare Tunnel e Sentry.",
+                    "Integrei o sistema ao ERP legado por uma API própria, mantida como serviço separado.",
+                ],
+            },
+            {
+                role: "Aprendiz industrial (logística)",
+                company: "Tupy S.A.",
+                period: "mar–abr/2026",
+            },
+        ],
+        skills: [
+            { label: "Linguagens", items: ["Python", "SQL", "JavaScript", "TypeScript"] },
+            { label: "Back-end", items: ["Django", "Django REST Framework", "APIs REST", "JWT", "Redis", "tarefas assíncronas"] },
+            { label: "Banco", items: ["PostgreSQL", "MySQL", "modelagem relacional"] },
+            { label: "Testes", items: ["pytest", "factory-boy"] },
+            { label: "Infra", items: ["Docker", "GitHub Actions", "Nginx", "Linux", "Cloudflare"] },
+            { label: "Front-end", items: ["Next.js", "React"] },
+        ],
+        education: [
+            { degree: "Bacharelado em Engenharia de Software", institution: "Católica SC", period: "fev/2026 – dez/2029 · em curso" },
+            { degree: "Técnico em Desenvolvimento de Sistemas", institution: "SENAI", period: "jan/2024 – dez/2025" },
+        ],
     },
-    {
-        title: "timezonefinder - open source contribution",
-        description: "Contribution to timezonefinder, a widely used Python library for offline timezone lookup. Proposed and shipped a data-release tracking pipeline: a DATA_VERSION file written by the data parsing flow and a scheduled GitHub Actions workflow that detects new timezone boundary data releases and notifies the maintainer. Merged upstream, and currently working with the maintainer on automating the full data update flow.",
-        tags: ["Python", "GitHub Actions", "CI/CD"],
-        url: "https://github.com/jannikmi/timezonefinder/pull/429"
+    en: {
+        meta: {
+            title: "Lucas Hemkemeier — Back-end Developer",
+            description: "Back-end developer working with Python and Django, based in Joinville, Brazil.",
+        },
+        role: "Junior Back-end Developer · Joinville, Brazil",
+        about: "Back-end developer working with Python and Django. Since May 2026 I have been responsible for a production management system at a company in Joinville, from the data model to deployment. Systems Development technician (SENAI) and Software Engineering student at Católica SC. Currently studying Java and Spring Boot.",
+        ui: {
+            email: "Email",
+            themeToDark: "Switch to dark theme",
+            themeToLight: "Switch to light theme",
+            langSwitch: "Mudar para português",
+        },
+        sections: {
+            projects: "Projects",
+            openSource: "Open source",
+            experience: "Experience",
+            skills: "Skills",
+            education: "Education",
+        },
+        projects: [
+            {
+                title: "racha-api",
+                description: "REST API for sports court rentals: daily time-slot grid, booking several slots in a single transaction, orders, pagination and filters.",
+                stack: ["Django", "PostgreSQL"],
+                links: [{ label: "repository", url: REPO.racha }],
+            },
+            {
+                title: "Tremzz",
+                description: "Web platform for railway operations management: routes, users and real-time communication with sensors over MQTT. Team project from the technical program at SENAI, where I was responsible for the data model, the back-end, the screens, the MQTT integration and the sensor assembly.",
+                stack: ["PHP", "MySQL", "JavaScript", "MQTT"],
+                links: [
+                    { label: "repository", url: REPO.tremzz },
+                    { label: "iot repository", url: REPO.tremzzIot },
+                ],
+            },
+        ],
+        openSource: [
+            {
+                title: "folio",
+                description: "15 merged pull requests to folio, which generates a portfolio and résumé from a GitHub profile: features, test coverage, CI setup, error handling, security fixes and accessibility improvements.",
+                links: [
+                    { label: "meufolio.dev", url: "https://meufolio.dev" },
+                    { label: "repository", url: REPO.folio },
+                ],
+            },
+            {
+                title: "timezonefinder",
+                description: "Python library for offline timezone lookup by coordinates, with around 5 million monthly downloads. 4 merged pull requests and 2 resolved issues, credited by name in the CHANGELOG: automation of the boundary-data update pipeline, from detecting a new release to auto-merging once CI passes.",
+                links: [
+                    { label: "repository", url: REPO.timezonefinder },
+                    { label: "CHANGELOG", url: `${REPO.timezonefinder}/blob/master/CHANGELOG.rst` },
+                ],
+            },
+        ],
+        experience: [
+            {
+                role: "Full-Stack Developer (Django · Next.js)",
+                company: "Origetec",
+                period: "May 2026 – present",
+                note: "Internal title: AI Integrator",
+                bullets: [
+                    "Designed and maintain the management system's REST API in Django and DRF, with JWT authentication and business rules in a dedicated service layer.",
+                    "Modeled the PostgreSQL database, enforcing critical rules as constraints and using transactional locking where concurrency matters.",
+                    "Built the CI/CD pipelines on GitHub Actions and run production: Docker, Nginx, Ubuntu VM, Cloudflare Tunnel and Sentry.",
+                    "Integrated the system with the legacy ERP through a separate API service I wrote and maintain.",
+                ],
+            },
+            {
+                role: "Industrial Apprentice (Logistics)",
+                company: "Tupy S.A.",
+                period: "Mar–Apr 2026",
+            },
+        ],
+        skills: [
+            { label: "Languages", items: ["Python", "SQL", "JavaScript", "TypeScript"] },
+            { label: "Back-end", items: ["Django", "Django REST Framework", "REST APIs", "JWT", "Redis", "background tasks"] },
+            { label: "Databases", items: ["PostgreSQL", "MySQL", "relational modeling"] },
+            { label: "Testing", items: ["pytest", "factory-boy"] },
+            { label: "Infrastructure", items: ["Docker", "GitHub Actions", "Nginx", "Linux", "Cloudflare"] },
+            { label: "Front-end", items: ["Next.js", "React"] },
+        ],
+        education: [
+            { degree: "Bachelor's in Software Engineering", institution: "Católica SC", period: "Feb 2026 – Dec 2029 · in progress" },
+            { degree: "Systems Development Technician", institution: "SENAI", period: "Jan 2024 – Dec 2025" },
+        ],
     },
-    {
-        title: "folio - open source contributions",
-        description: "Eleven merged pull requests to folio, a collaborative open source project: features, test coverage, CI setup, error handling, security fixes and accessibility improvements, all following the project's contribution standards and review process.",
-        tags: ["CI", "Testing", "Accessibility"],
-        url: "https://github.com/miguelrcha/folio"
-    },
-];
-
-export const SKILLS = [
-    "TypeScript",
-    "JavaScript",
-    "Python",
-    "Node.js",
-    "C",
-    "SQL",
-    "PostgreSQL",
-    "MySQL",
-    "Supabase",
-    "Docker",
-    "GitHub Actions",
-    "Cloudflare",
-    "Git",
-    "Figma",
-];
-
-export const ABOUT_TEXT = "Software developer with a back-end focus and a growing interest in AI and agentic development, focused on writing clean, reusable and maintainable code. Systems Development technician and currently pursuing a Software Engineering degree. At Origetec I work across the whole product cycle, from understanding the problem behind the request to running the solution in production. I believe good code is built through collaboration and shared knowledge.";
+};

@@ -1,24 +1,17 @@
-import { SKILLS } from "../data/portfolio";
+import { Group, Row } from "./Group";
 
-function Skills({ value }) {
+function Skills({ t }) {
   return (
-    <section id="skills" className="mx-auto w-full max-w-3xl px-6 py-12">
-      <h2 className="mb-6 text-2xl font-semibold">Skills</h2>
-      <div className="flex flex-wrap gap-2">
-        {SKILLS.map((skill, index) => (
-          <span
-            key={index}
-            className={`rounded-md border px-3 py-1.5 text-sm transition-colors duration-300 ${
-              value
-                ? "border-gray-200 bg-gray-50 text-gray-700"
-                : "border-white/1 bg-white/4 text-[#EDEDEA]"
-            }`}
-          >
-            {skill}
-          </span>
-        ))}
-      </div>
-    </section>
+    <Group id="skills" label={t.sections.skills}>
+      {t.skills.map((group) => (
+        <Row key={group.label}>
+          <div className="min-w-0 flex-1 sm:flex sm:gap-4">
+            <h3 className="shrink-0 text-[15px] font-semibold sm:w-32">{group.label}</h3>
+            <p className="text-[15px] leading-[1.4] text-suave">{group.items.join(" · ")}</p>
+          </div>
+        </Row>
+      ))}
+    </Group>
   );
 }
 
