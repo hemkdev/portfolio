@@ -48,10 +48,16 @@ const og = new URL("/og.png", Astro.site);
       rel="stylesheet"
     />
     <script is:inline>
-      // Aplica o tema antes do primeiro paint, para não piscar
+      // Roda antes do primeiro paint, para não piscar
       try {
         document.documentElement.dataset.theme =
           localStorage.getItem("theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+
+        // Só a raiz redireciona: link direto para /en/ é respeitado. Robôs ficam, para o PT continuar indexado.
+        var idioma = localStorage.getItem("lang") || (navigator.language.toLowerCase().startsWith("pt") ? "pt" : "en");
+        if (location.pathname === "/" && idioma === "en" && !/bot|crawl|spider/i.test(navigator.userAgent)) {
+          location.replace("/en/" + location.hash);
+        }
       } catch (e) {}
     </script>
   </head>

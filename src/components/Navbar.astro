@@ -26,6 +26,8 @@ const toggle = "cursor-pointer rounded-full bg-botao px-3 py-1 font-mono text-[1
     <a
       href={lang === "pt" ? "/en/" : "/"}
       hreflang={lang === "pt" ? "en" : "pt-BR"}
+      id="idioma"
+      data-lang={lang === "pt" ? "en" : "pt"}
       aria-label={t.ui.langSwitch}
       class={`${toggle} ml-auto`}
     >
@@ -49,6 +51,16 @@ const toggle = "cursor-pointer rounded-full bg-botao px-3 py-1 font-mono text-[1
   const header = document.querySelector("header")!;
   const name = header.querySelector("span")!;
   const button = document.querySelector<HTMLButtonElement>("#tema")!;
+  const langLink = document.querySelector<HTMLAnchorElement>("#idioma")!;
+
+  // Salva a escolha antes de navegar; sem isso, quem escolhe PT num navegador em inglês volta para /en/
+  langLink.addEventListener("click", () => {
+    try {
+      localStorage.setItem("lang", langLink.dataset.lang!);
+    } catch {
+      /* armazenamento indisponível */
+    }
+  });
 
   const onScroll = () => {
     const rolado = scrollY > 90;
