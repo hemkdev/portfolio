@@ -1,0 +1,40 @@
+---
+import { PERSON, type Content } from "../data/portfolio";
+
+interface Props {
+  t: Content;
+}
+
+const { t } = Astro.props;
+const links = [
+  { label: "GitHub", url: PERSON.github },
+  { label: "LinkedIn", url: PERSON.linkedin },
+  { label: t.ui.email, url: `mailto:${PERSON.email}` },
+];
+const button = "rounded-full px-4 py-2.25 text-[15px] font-semibold";
+---
+
+<section id="home" class="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+  <div class="flex-1">
+    <h1 class="mt-6 text-[34px] leading-[1.1] font-bold tracking-[-0.022em]">{PERSON.name}</h1>
+    <p class="mt-1 text-suave">{t.role}</p>
+    <p class="mt-4 max-w-[56ch]">{t.about}</p>
+
+    <!-- TODO: botão "Baixar currículo" (preenchido, bg-texto text-fundo) volta quando os PDFs sem telefone existirem -->
+    <nav aria-label="Links" class="mt-5 flex flex-wrap gap-2">
+      {
+        links.map((link) => (
+          <a
+            href={link.url}
+            class={`${button} bg-botao`}
+            {...(link.url.startsWith("http") && { target: "_blank", rel: "noopener noreferrer" })}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+
+  <img src={PERSON.avatar} alt={PERSON.name} class="size-36 shrink-0 rounded-xl object-cover ring-1 ring-separador" />
+</section>

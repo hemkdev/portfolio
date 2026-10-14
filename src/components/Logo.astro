@@ -1,0 +1,19 @@
+---
+// Símbolo da marca: h na cor do texto + bolinha verde
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<svg viewBox="0 0 160 160" aria-hidden="true" class={className}>
+  <path
+    d="M44 20 V136 M44 100 C44 74 60 66 78 66 C98 66 108 78 108 100 V136"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="34"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+  <circle cx="122" cy="28" r="18" class="fill-vivo"></circle>
+</svg>

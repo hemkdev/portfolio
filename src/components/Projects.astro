@@ -1,0 +1,40 @@
+---
+import type { Project } from "../data/portfolio";
+import Group from "./Group.astro";
+import Row from "./Row.astro";
+
+// Usado para Projetos e para Open source
+interface Props {
+  id: string;
+  label: string;
+  items: Project[];
+}
+
+const { id, label, items } = Astro.props;
+---
+
+<Group id={id} label={label}>
+  {
+    items.map((item) => (
+      <Row>
+        <div class="min-w-0 flex-1">
+          <h3 class="text-[17px] font-semibold">{item.title}</h3>
+          <p class="mt-0.5 text-[15px] leading-[1.4] text-suave">{item.description}</p>
+          {item.stack && <p class="mt-1.5 font-mono text-[13px] text-suave">{item.stack.join(" · ")}</p>}
+          <p class="mt-2 flex flex-wrap gap-x-4 gap-y-1 font-mono text-[13px]">
+            {item.links.map((link) => (
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline decoration-separador underline-offset-3 hover:decoration-current"
+              >
+                {link.label} ↗
+              </a>
+            ))}
+          </p>
+        </div>
+      </Row>
+    ))
+  }
+</Group>

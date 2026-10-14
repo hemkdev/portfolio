@@ -1,0 +1,16 @@
+---
+// Seção com rótulo e lista agrupada, como em Ajustes do iOS
+interface Props {
+  id: string;
+  label: string;
+}
+
+const { id, label } = Astro.props;
+---
+
+<section id={id} aria-labelledby={`${id}-label`}>
+  <h2 id={`${id}-label`} class="mx-4 mt-10 mb-2 text-[13px] font-normal uppercase tracking-[0.02em] text-suave">
+    {label}
+  </h2>
+  <div class="overflow-hidden rounded-xl bg-celula"><slot /></div>
+</section>

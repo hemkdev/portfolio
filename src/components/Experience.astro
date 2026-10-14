@@ -1,0 +1,34 @@
+---
+import type { Content } from "../data/portfolio";
+import Group from "./Group.astro";
+import Row from "./Row.astro";
+
+interface Props {
+  t: Content;
+}
+
+const { t } = Astro.props;
+---
+
+<Group id="experience" label={t.sections.experience}>
+  {
+    t.experience.map((job) => (
+      <Row>
+        <div class="min-w-0 flex-1">
+          <h3 class="text-[17px] font-semibold">{job.role}</h3>
+          <p class="mt-0.5 font-mono text-[13px] text-suave tabular-nums">
+            {job.company} · {job.period}
+          </p>
+          {job.note && <p class="mt-1 text-[15px] italic text-suave">{job.note}</p>}
+          {job.bullets && (
+            <ul class="mt-2 list-disc space-y-1 pl-5 text-[15px] leading-[1.4] marker:text-neutro">
+              {job.bullets.map((bullet) => (
+                <li>{bullet}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </Row>
+    ))
+  }
+</Group>
