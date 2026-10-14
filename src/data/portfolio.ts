@@ -6,6 +6,7 @@ export const PERSON = {
     github: "https://github.com/hemkdev",
     avatar: "https://github.com/hemkdev.png",
     linkedin: "https://www.linkedin.com/in/hemkemeier",
+    location: { city: "Joinville", region: "SC", country: "BR" },
 };
 
 const REPO = {
