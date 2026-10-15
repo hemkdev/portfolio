@@ -1,6 +1,6 @@
 ---
 import "../index.css";
-import { CONTENT, type Lang } from "../data/portfolio";
+import { CONTENT, PERSON, type Lang } from "../data/portfolio";
 import Navbar from "./Navbar.astro";
 import Hero from "./Hero.astro";
 import Projects from "./Projects.astro";
@@ -17,6 +17,34 @@ const { lang } = Astro.props;
 const t = CONTENT[lang];
 const urls = { pt: new URL("/", Astro.site), en: new URL("/en/", Astro.site) };
 const og = new URL("/og.png", Astro.site);
+
+// Dados estruturados (schema.org): o que o Google e as IAs leem sem interpretar o layout
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  url: urls[lang].href,
+  inLanguage: lang === "pt" ? "pt-BR" : "en",
+  mainEntity: {
+    "@type": "Person",
+    name: PERSON.name,
+    url: urls.pt.href,
+    image: PERSON.avatar,
+    email: `mailto:${PERSON.email}`,
+    jobTitle: t.role.split(" · ")[0],
+    description: t.meta.description,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: PERSON.location.city,
+      addressRegion: PERSON.location.region,
+      addressCountry: PERSON.location.country,
+    },
+    sameAs: [PERSON.github, PERSON.linkedin],
+    // Primeiro item de experience é o emprego atual
+    worksFor: { "@type": "Organization", name: t.experience[0]?.company },
+    alumniOf: t.education.map((item) => ({ "@type": "EducationalOrganization", name: item.institution })),
+    knowsAbout: t.skills.flatMap((group) => group.items),
+  },
+};
 ---
 
 <!doctype html>
@@ -27,6 +55,7 @@ const og = new URL("/og.png", Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{t.meta.title}</title>
     <meta name="description" content={t.meta.description} />
+    <meta name="author" content={PERSON.name} />
     <link rel="canonical" href={urls[lang]} />
     <link rel="alternate" hreflang="pt-BR" href={urls.pt} />
     <link rel="alternate" hreflang="en" href={urls.en} />
@@ -34,6 +63,8 @@ const og = new URL("/og.png", Astro.site);
     <meta property="og:type" content="website" />
     <meta property="og:url" content={urls[lang]} />
     <meta property="og:locale" content={lang === "pt" ? "pt_BR" : "en_US"} />
+    <meta property="og:locale:alternate" content={lang === "pt" ? "en_US" : "pt_BR"} />
+    <meta property="og:site_name" content="hemk.dev" />
     <meta property="og:title" content={t.meta.title} />
     <meta property="og:description" content={t.meta.description} />
     <meta property="og:image" content={og} />
@@ -41,6 +72,9 @@ const og = new URL("/og.png", Astro.site);
     <meta property="og:image:height" content="1260" />
     <meta property="og:image:alt" content="Lucas Hemkemeier" />
     <meta name="twitter:card" content="summary_large_image" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link rel="alternate" type="text/markdown" title="llms.txt" href="/llms.txt" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, "\\u003c")} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
