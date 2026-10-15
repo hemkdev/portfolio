@@ -1,0 +1,79 @@
+---
+import "../index.css";
+import { CONTENT, type Lang } from "../data/portfolio";
+import Navbar from "./Navbar.astro";
+import Hero from "./Hero.astro";
+import Projects from "./Projects.astro";
+import Experience from "./Experience.astro";
+import Skills from "./Skills.astro";
+import Education from "./Education.astro";
+import Logo from "./Logo.astro";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = CONTENT[lang];
+const urls = { pt: new URL("/", Astro.site), en: new URL("/en/", Astro.site) };
+const og = new URL("/og.png", Astro.site);
+---
+
+<!doctype html>
+<html lang={lang === "pt" ? "pt-BR" : "en"}>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{t.meta.title}</title>
+    <meta name="description" content={t.meta.description} />
+    <link rel="canonical" href={urls[lang]} />
+    <link rel="alternate" hreflang="pt-BR" href={urls.pt} />
+    <link rel="alternate" hreflang="en" href={urls.en} />
+    <link rel="alternate" hreflang="x-default" href={urls.pt} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={urls[lang]} />
+    <meta property="og:locale" content={lang === "pt" ? "pt_BR" : "en_US"} />
+    <meta property="og:title" content={t.meta.title} />
+    <meta property="og:description" content={t.meta.description} />
+    <meta property="og:image" content={og} />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content="Lucas Hemkemeier" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline>
+      // Roda antes do primeiro paint, para não piscar
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+
+        // Só a raiz redireciona: link direto para /en/ é respeitado. Robôs ficam, para o PT continuar indexado.
+        var idioma = localStorage.getItem("lang") || (navigator.language.toLowerCase().startsWith("pt") ? "pt" : "en");
+        if (location.pathname === "/" && idioma === "en" && !/bot|crawl|spider/i.test(navigator.userAgent)) {
+          location.replace("/en/" + location.hash);
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <Navbar t={t} lang={lang} />
+    <main class="mx-auto max-w-170 px-4 pt-2">
+      <Hero t={t} />
+      <Projects id="projects" label={t.sections.projects} items={t.projects} />
+      <Projects id="open-source" label={t.sections.openSource} items={t.openSource} />
+      <Experience t={t} />
+      <Skills t={t} />
+      <Education t={t} />
+    </main>
+    <footer class="mx-auto mt-16 flex max-w-170 items-center justify-center gap-2 px-4 pb-12 font-mono text-[13px] text-suave">
+      <Logo class="size-5 text-texto" />
+      hemk.dev
+    </footer>
+  </body>
+</html>

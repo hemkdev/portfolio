@@ -1,0 +1,24 @@
+---
+import type { Content } from "../data/portfolio";
+import Group from "./Group.astro";
+import Row from "./Row.astro";
+
+interface Props {
+  t: Content;
+}
+
+const { t } = Astro.props;
+---
+
+<Group id="skills" label={t.sections.skills}>
+  {
+    t.skills.map((group) => (
+      <Row>
+        <div class="min-w-0 flex-1 sm:flex sm:gap-4">
+          <h3 class="shrink-0 text-[15px] font-semibold sm:w-32">{group.label}</h3>
+          <p class="text-[15px] leading-[1.4] text-suave">{group.items.join(" · ")}</p>
+        </div>
+      </Row>
+    ))
+  }
+</Group>

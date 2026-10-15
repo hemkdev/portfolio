@@ -16,7 +16,10 @@
   --color-neutro: #aeaeb2;
 }
 
-/* Tema escuro: definido no <html data-theme> pelo script inline do index.html e pelo App */
+/* Variante dark: segue o <html data-theme>, não o prefers-color-scheme */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Tema escuro: definido no <html data-theme> pelo script inline do Page.astro e pelo botão da Navbar */
 :root[data-theme="dark"] {
   color-scheme: dark;
   --color-fundo: #000000;

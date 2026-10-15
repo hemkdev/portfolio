@@ -1,0 +1,86 @@
+---
+import { PERSON, type Content, type Lang } from "../data/portfolio";
+import Logo from "./Logo.astro";
+
+interface Props {
+  t: Content;
+  lang: Lang;
+}
+
+const { t, lang } = Astro.props;
+const toggle = "cursor-pointer rounded-full bg-botao px-3 py-1 font-mono text-[13px] font-medium";
+---
+
+{/* Barra translúcida: vazia no topo; ao rolar mostra símbolo e nome, como o título grande do iOS */}
+<header
+  class="group sticky top-0 z-10 border-b-[0.5px] border-transparent bg-barra backdrop-blur-[20px] backdrop-saturate-[1.8] transition-colors duration-200 data-rolado:border-separador"
+>
+  <div class="mx-auto flex h-13 max-w-170 items-center gap-2 px-4">
+    <span
+      aria-hidden="true"
+      class="flex items-center gap-2 text-[17px] font-semibold opacity-0 transition-opacity duration-200 group-data-rolado:opacity-100"
+    >
+      <Logo class="size-4.5" />
+      {PERSON.name}
+    </span>
+    <a
+      href={lang === "pt" ? "/en/" : "/"}
+      hreflang={lang === "pt" ? "en" : "pt-BR"}
+      id="idioma"
+      data-lang={lang === "pt" ? "en" : "pt"}
+      aria-label={t.ui.langSwitch}
+      class={`${toggle} ml-auto`}
+    >
+      {lang === "pt" ? "EN" : "PT"}
+    </a>
+    <button
+      type="button"
+      id="tema"
+      data-to-dark={t.ui.themeToDark}
+      data-to-light={t.ui.themeToLight}
+      aria-label={t.ui.themeToDark}
+      class={toggle}
+    >
+      <span class="dark:hidden">☾</span><span class="hidden dark:inline">☀</span>
+    </button>
+  </div>
+</header>
+
+<script>
+  const root = document.documentElement;
+  const header = document.querySelector("header")!;
+  const name = header.querySelector("span")!;
+  const button = document.querySelector<HTMLButtonElement>("#tema")!;
+  const langLink = document.querySelector<HTMLAnchorElement>("#idioma")!;
+
+  // Salva a escolha antes de navegar; sem isso, quem escolhe PT num navegador em inglês volta para /en/
+  langLink.addEventListener("click", () => {
+    try {
+      localStorage.setItem("lang", langLink.dataset.lang!);
+    } catch {
+      /* armazenamento indisponível */
+    }
+  });
+
+  const onScroll = () => {
+    const rolado = scrollY > 90;
+    header.toggleAttribute("data-rolado", rolado);
+    name.ariaHidden = String(!rolado);
+  };
+  onScroll();
+  addEventListener("scroll", onScroll, { passive: true });
+
+  const syncLabel = () => {
+    button.ariaLabel = root.dataset.theme === "dark" ? button.dataset.toLight! : button.dataset.toDark!;
+  };
+  syncLabel();
+  button.addEventListener("click", () => {
+    root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+    try {
+      localStorage.setItem("theme", root.dataset.theme);
+    } catch {
+      /* armazenamento indisponível */
+    }
+    syncLabel();
+  });
+</script>

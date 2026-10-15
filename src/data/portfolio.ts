@@ -19,7 +19,32 @@ const REPO = {
 // TODO: status por projeto (no ar, em deploy, encerrado) entra junto com a feature maior de status.
 // TODO: Tino entra quando estiver no ar (deploy na VM Oracle + página de produto).
 
-export const CONTENT = {
+export type Lang = "pt" | "en";
+
+export type Link = { label: string; url: string };
+
+export type Project = {
+    title: string;
+    description: string;
+    stack?: string[];
+    links: Link[];
+};
+
+export type Content = {
+    meta: { title: string; description: string };
+    role: string;
+    about: string;
+    ui: { email: string; themeToDark: string; themeToLight: string; langSwitch: string };
+    sections: Record<"projects" | "openSource" | "experience" | "skills" | "education", string>;
+    projects: Project[];
+    openSource: Project[];
+    experience: { role: string; company: string; period: string; note?: string; bullets?: string[] }[];
+    skills: { label: string; items: string[] }[];
+    education: { degree: string; institution: string; period: string }[];
+};
+
+// Record<Lang, Content> garante a paridade PT/EN em tempo de compilação
+export const CONTENT: Record<Lang, Content> = {
     pt: {
         meta: {
             title: "Lucas Hemkemeier — Desenvolvedor Backend",

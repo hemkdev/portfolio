@@ -1,0 +1,26 @@
+---
+import type { Content } from "../data/portfolio";
+import Group from "./Group.astro";
+import Row from "./Row.astro";
+
+interface Props {
+  t: Content;
+}
+
+const { t } = Astro.props;
+---
+
+<Group id="education" label={t.sections.education}>
+  {
+    t.education.map((item) => (
+      <Row>
+        <div class="min-w-0 flex-1">
+          <h3 class="text-[17px] font-semibold">{item.degree}</h3>
+          <p class="mt-0.5 font-mono text-[13px] text-suave tabular-nums">
+            {item.institution} · {item.period}
+          </p>
+        </div>
+      </Row>
+    ))
+  }
+</Group>
