@@ -1,5 +1,3 @@
-// Dados do portfolio. Tudo o que é texto visível vive aqui, em PT e EN.
-
 export const PERSON = {
     name: "Lucas Hemkemeier",
     email: "lucas.hemkemeier007@gmail.com",
@@ -17,7 +15,10 @@ const REPO = {
     timezonefinder: "https://github.com/jannikmi/timezonefinder",
 };
 
-// TODO: status por projeto (no ar, em deploy, encerrado) entra junto com a feature maior de status.
+const PROD = {
+    racha: "https://racha.hemk.dev/api/docs/",
+};
+
 // TODO: Tino entra quando estiver no ar (deploy na VM Oracle + página de produto).
 
 export type Lang = "pt" | "en";
@@ -71,8 +72,10 @@ export const CONTENT: Record<Lang, Content> = {
                 title: "racha-api",
                 description: "API REST para locação de quadras esportivas: grade de horários do dia, compra de vários horários numa transação só, pedidos, paginação e filtros.",
                 stack: ["Django", "PostgreSQL"],
-                // TODO: adicionar racha.hemk.dev depois do deploy
-                links: [{ label: "repositório", url: REPO.racha }],
+                links: [
+                    { label: "repositório", url: REPO.racha },
+                    { label: "documentação da API", url: PROD.racha },
+                ],
             },
             {
                 title: "Tremzz",
@@ -109,7 +112,7 @@ export const CONTENT: Record<Lang, Content> = {
                 period: "mai/2026 – presente",
                 note: "Cargo interno: Integrador de IA",
                 bullets: [
-                    "Projetei e mantenho a API REST do sistema de gestão em Django e DRF, com autenticação JWT e regras de negócio numa camada de serviço.",
+                    "Projetei e mantenho a API REST do sistema de gestão que integra diversas áreas da empresa, usado por mais de 30 pessoas, em Django e DRF, com autenticação JWT e regras de negócio numa camada de serviço.",
                     "Modelei o banco em PostgreSQL, com as regras críticas em constraints e bloqueio transacional onde há concorrência.",
                     "Montei o CI/CD no GitHub Actions e opero a produção: Docker, Nginx, VM Ubuntu, Cloudflare Tunnel e Sentry.",
                     "Integrei o sistema ao ERP legado por uma API própria, mantida como serviço separado.",
@@ -118,12 +121,12 @@ export const CONTENT: Record<Lang, Content> = {
             {
                 role: "Aprendiz industrial (logística)",
                 company: "Tupy S.A.",
-                period: "mar–abr/2026",
+                period: "mar–mai/2026",
             },
         ],
         skills: [
             { label: "Linguagens", items: ["Python", "SQL", "JavaScript", "TypeScript"] },
-            { label: "Back-end", items: ["Django", "Django REST Framework", "APIs REST", "JWT", "Redis", "tarefas assíncronas"] },
+            { label: "Back-end", items: ["Django", "Django REST Framework", "APIs REST", "JWT", "tarefas assíncronas"] },
             { label: "Banco", items: ["PostgreSQL", "MySQL", "modelagem relacional"] },
             { label: "Testes", items: ["pytest", "factory-boy"] },
             { label: "Infra", items: ["Docker", "GitHub Actions", "Nginx", "Linux", "Cloudflare"] },
@@ -131,7 +134,7 @@ export const CONTENT: Record<Lang, Content> = {
         ],
         education: [
             { degree: "Bacharelado em Engenharia de Software", institution: "Católica SC", period: "fev/2026 – dez/2029 · em curso" },
-            { degree: "Técnico em Desenvolvimento de Sistemas", institution: "SENAI", period: "jan/2024 – dez/2025" },
+            { degree: "Técnico em Desenvolvimento de Sistemas", institution: "SENAI", period: "fev/2024 – dez/2025" },
         ],
     },
     en: {
@@ -159,7 +162,10 @@ export const CONTENT: Record<Lang, Content> = {
                 title: "racha-api",
                 description: "REST API for sports court rentals: daily time-slot grid, booking several slots in a single transaction, orders, pagination and filters.",
                 stack: ["Django", "PostgreSQL"],
-                links: [{ label: "repository", url: REPO.racha }],
+                links: [
+                    { label: "repository", url: REPO.racha },
+                    { label: "API docs", url: PROD.racha },
+                ],
             },
             {
                 title: "Tremzz",
@@ -196,7 +202,7 @@ export const CONTENT: Record<Lang, Content> = {
                 period: "May 2026 – present",
                 note: "Internal title: AI Integrator",
                 bullets: [
-                    "Designed and maintain the management system's REST API in Django and DRF, with JWT authentication and business rules in a dedicated service layer.",
+                    "Designed and maintain the REST API for the company-wide management system, used by 30+ people across several departments, built with Django and DRF, JWT authentication and business rules in a dedicated service layer.",
                     "Modeled the PostgreSQL database, enforcing critical rules as constraints and using transactional locking where concurrency matters.",
                     "Built the CI/CD pipelines on GitHub Actions and run production: Docker, Nginx, Ubuntu VM, Cloudflare Tunnel and Sentry.",
                     "Integrated the system with the legacy ERP through a separate API service I wrote and maintain.",
@@ -205,12 +211,12 @@ export const CONTENT: Record<Lang, Content> = {
             {
                 role: "Industrial Apprentice (Logistics)",
                 company: "Tupy S.A.",
-                period: "Mar–Apr 2026",
+                period: "Mar–May 2026",
             },
         ],
         skills: [
             { label: "Languages", items: ["Python", "SQL", "JavaScript", "TypeScript"] },
-            { label: "Back-end", items: ["Django", "Django REST Framework", "REST APIs", "JWT", "Redis", "background tasks"] },
+            { label: "Back-end", items: ["Django", "Django REST Framework", "REST APIs", "JWT", "background tasks"] },
             { label: "Databases", items: ["PostgreSQL", "MySQL", "relational modeling"] },
             { label: "Testing", items: ["pytest", "factory-boy"] },
             { label: "Infrastructure", items: ["Docker", "GitHub Actions", "Nginx", "Linux", "Cloudflare"] },
@@ -218,7 +224,7 @@ export const CONTENT: Record<Lang, Content> = {
         ],
         education: [
             { degree: "Bachelor's in Software Engineering", institution: "Católica SC", period: "Feb 2026 – Dec 2029 · in progress" },
-            { degree: "Systems Development Technician", institution: "SENAI", period: "Jan 2024 – Dec 2025" },
+            { degree: "Systems Development Technician", institution: "SENAI", period: "Feb 2024 – Dec 2025" },
         ],
     },
 };

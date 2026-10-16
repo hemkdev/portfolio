@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Tokens de cor na lógica do iOS: fundo agrupado, célula, separador fino, rótulo secundário */
 @theme {
   --font-sans: "Instrument Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
@@ -16,10 +15,9 @@
   --color-neutro: #aeaeb2;
 }
 
-/* Variante dark: segue o <html data-theme>, não o prefers-color-scheme */
+/* Tema escuro segue o <html data-theme> (definido pelo script inline do Page.astro e pela Navbar), não o prefers-color-scheme */
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-/* Tema escuro: definido no <html data-theme> pelo script inline do Page.astro e pelo botão da Navbar */
 :root[data-theme="dark"] {
   color-scheme: dark;
   --color-fundo: #000000;
@@ -49,7 +47,6 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* Lista agrupada (estilo Ajustes): separador fino que começa a 16px da esquerda */
 .linha + .linha::before {
   content: "";
   position: absolute;
