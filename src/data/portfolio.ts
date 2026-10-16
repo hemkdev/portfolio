@@ -16,7 +16,7 @@ const REPO = {
 };
 
 const PROD = {
-    racha: "https://racha.hemk.dev/api/docs",
+    racha: "https://racha.hemk.dev/api/docs/",
 };
 
 // TODO: Tino entra quando estiver no ar (deploy na VM Oracle + página de produto).
@@ -74,7 +74,7 @@ export const CONTENT: Record<Lang, Content> = {
                 stack: ["Django", "PostgreSQL"],
                 links: [
                     { label: "repositório", url: REPO.racha },
-                    { label: "Documentação da API", url: PROD.racha },
+                    { label: "documentação da API", url: PROD.racha },
                 ],
             },
             {
