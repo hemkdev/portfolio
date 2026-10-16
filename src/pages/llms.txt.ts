@@ -1,7 +1,6 @@
 import type { APIRoute } from "astro";
 import { CONTENT, PERSON, type Content, type Lang, type Project } from "../data/portfolio";
 
-// Versão em Markdown do site inteiro, para IAs lerem sem renderizar (formato llms.txt)
 const LANG_NAME: Record<Lang, string> = { pt: "Português", en: "English" };
 
 const links = (item: Project) => item.links.map((link) => `[${link.label}](${link.url})`).join(" · ");

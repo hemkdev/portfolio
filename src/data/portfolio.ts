@@ -1,5 +1,3 @@
-// Dados do portfolio. Tudo o que é texto visível vive aqui, em PT e EN.
-
 export const PERSON = {
     name: "Lucas Hemkemeier",
     email: "lucas.hemkemeier007@gmail.com",
@@ -17,7 +15,6 @@ const REPO = {
     timezonefinder: "https://github.com/jannikmi/timezonefinder",
 };
 
-// TODO: status por projeto (no ar, em deploy, encerrado) entra junto com a feature maior de status.
 // TODO: Tino entra quando estiver no ar (deploy na VM Oracle + página de produto).
 
 export type Lang = "pt" | "en";

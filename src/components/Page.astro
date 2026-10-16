@@ -18,7 +18,6 @@ const t = CONTENT[lang];
 const urls = { pt: new URL("/", Astro.site), en: new URL("/en/", Astro.site) };
 const og = new URL("/og.png", Astro.site);
 
-// Dados estruturados (schema.org): o que o Google e as IAs leem sem interpretar o layout
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
