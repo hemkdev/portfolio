@@ -19,6 +19,10 @@ const PROD = {
     racha: "https://racha.hemk.dev/api/docs/",
 };
 
+const HEALTH = {
+    racha: "https://racha.hemk.dev/health/",
+};
+
 // TODO: Tino entra quando estiver no ar (deploy na VM Oracle + página de produto).
 
 export type Lang = "pt" | "en";
@@ -29,6 +33,7 @@ export type Project = {
     title: string;
     description: string;
     stack?: string[];
+    status?: string;
     links: Link[];
 };
 
@@ -72,6 +77,7 @@ export const CONTENT: Record<Lang, Content> = {
                 title: "racha-api",
                 description: "API REST para locação de quadras esportivas: grade de horários do dia, compra de vários horários numa transação só, pedidos, paginação e filtros.",
                 stack: ["Django", "PostgreSQL"],
+                status: HEALTH.racha,
                 links: [
                     { label: "repositório", url: REPO.racha },
                     { label: "documentação da API", url: PROD.racha },
@@ -162,6 +168,7 @@ export const CONTENT: Record<Lang, Content> = {
                 title: "racha-api",
                 description: "REST API for sports court rentals: daily time-slot grid, booking several slots in a single transaction, orders, pagination and filters.",
                 stack: ["Django", "PostgreSQL"],
+                status: HEALTH.racha,
                 links: [
                     { label: "repository", url: REPO.racha },
                     { label: "API docs", url: PROD.racha },
