@@ -45,6 +45,7 @@ export type Content = {
     role: string;
     about: string;
     ui: { email: string; themeToDark: string; themeToLight: string; langSwitch: string };
+    cv: Link;
     sections: Record<"projects" | "openSource" | "experience" | "skills" | "education", string>;
     projects: Project[];
     openSource: Project[];
@@ -68,6 +69,7 @@ export const CONTENT: Record<Lang, Content> = {
             themeToLight: "Ativar tema claro",
             langSwitch: "Switch to English",
         },
+        cv: { label: "Baixar currículo", url: "/lucas-hemkemeier-curriculo-backend.pdf" },
         sections: {
             projects: "Projetos",
             openSource: "Open source",
@@ -169,6 +171,7 @@ export const CONTENT: Record<Lang, Content> = {
             themeToLight: "Switch to light theme",
             langSwitch: "Mudar para português",
         },
+        cv: { label: "Download résumé", url: "/lucas-hemkemeier-resume-backend.pdf" },
         sections: {
             projects: "Projects",
             openSource: "Open source",
