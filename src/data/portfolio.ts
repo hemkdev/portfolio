@@ -9,6 +9,7 @@ export const PERSON = {
 
 const REPO = {
     racha: "https://github.com/hemkdev/racha-api",
+    noar: "https://github.com/hemkdev/noar-badge",
     tremzz: "https://github.com/hemkdev/tremzz",
     tremzzIot: "https://github.com/hemkdev/tremzz-iot",
     folio: "https://github.com/miguelrcha/folio",
@@ -17,6 +18,7 @@ const REPO = {
 
 const PROD = {
     racha: "https://racha.hemk.dev/api/docs/",
+    noar: "https://status.hemk.dev",
 };
 
 const HEALTH = {
@@ -81,6 +83,15 @@ export const CONTENT: Record<Lang, Content> = {
                 links: [
                     { label: "repositório", url: REPO.racha },
                     { label: "documentação da API", url: PROD.racha },
+                ],
+            },
+            {
+                title: "noar-badge",
+                description: "Selo de status ao vivo para README e sites: faz um GET no endpoint de saúde do app e mostra se ele está no ar e quanto tempo levou para responder. Roda na borda, com proteção contra SSRF em cada redirecionamento.",
+                stack: ["TypeScript", "Cloudflare Workers", "Vitest"],
+                links: [
+                    { label: "repositório", url: REPO.noar },
+                    { label: "status.hemk.dev", url: PROD.noar },
                 ],
             },
             {
@@ -172,6 +183,15 @@ export const CONTENT: Record<Lang, Content> = {
                 links: [
                     { label: "repository", url: REPO.racha },
                     { label: "API docs", url: PROD.racha },
+                ],
+            },
+            {
+                title: "noar-badge",
+                description: "Live status badge for READMEs and websites: it sends a GET to the app's health endpoint and shows whether it is up and how long it took to answer. Runs at the edge, with SSRF protection on every redirect.",
+                stack: ["TypeScript", "Cloudflare Workers", "Vitest"],
+                links: [
+                    { label: "repository", url: REPO.noar },
+                    { label: "status.hemk.dev", url: PROD.noar },
                 ],
             },
             {
