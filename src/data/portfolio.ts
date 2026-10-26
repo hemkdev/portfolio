@@ -62,7 +62,7 @@ export const CONTENT: Record<Lang, Content> = {
             description: "Desenvolvedor backend com Python e Django, em Joinville, SC.",
         },
         role: "Desenvolvedor Backend Júnior · Joinville, SC",
-        about: "Desenvolvedor backend com Python e Django. Desde maio de 2026 respondo pelo sistema de gestão em produção de uma empresa de Joinville, do modelo de dados ao deploy. Técnico em Desenvolvimento de Sistemas pelo SENAI e cursando Engenharia de Software na Católica SC. Hoje estudando Java e Spring Boot.",
+        about: "Desenvolvedor backend com Python e Django. Desde maio de 2026 respondo pelo sistema de gestão em produção de uma empresa de Araquari, do modelo de dados ao deploy. Técnico em Desenvolvimento de Sistemas pelo SENAI e cursando Engenharia de Software na Católica SC. Hoje estudando Java e Spring Boot.",
         ui: {
             email: "E-mail",
             themeToDark: "Ativar tema escuro",
@@ -164,7 +164,7 @@ export const CONTENT: Record<Lang, Content> = {
             description: "Back-end developer working with Python and Django, based in Joinville, Brazil.",
         },
         role: "Junior Back-end Developer · Joinville, Brazil",
-        about: "Back-end developer working with Python and Django. Since May 2026 I have been responsible for a production management system at a company in Joinville, from the data model to deployment. Systems Development technician (SENAI) and Software Engineering student at Católica SC. Currently studying Java and Spring Boot.",
+        about: "Back-end developer working with Python and Django. Since May 2026 I have been responsible for a production management system at a company in Araquari, from the data model to deployment. Systems Development technician (SENAI) and Software Engineering student at Católica SC. Currently studying Java and Spring Boot.",
         ui: {
             email: "Email",
             themeToDark: "Switch to dark theme",
