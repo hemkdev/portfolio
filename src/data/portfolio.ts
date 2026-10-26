@@ -9,6 +9,7 @@ export const PERSON = {
 
 const REPO = {
     racha: "https://github.com/hemkdev/racha-api",
+    noar: "https://github.com/hemkdev/noar-badge",
     tremzz: "https://github.com/hemkdev/tremzz",
     tremzzIot: "https://github.com/hemkdev/tremzz-iot",
     folio: "https://github.com/miguelrcha/folio",
@@ -17,10 +18,12 @@ const REPO = {
 
 const PROD = {
     racha: "https://racha.hemk.dev/api/docs/",
+    noar: "https://status.hemk.dev",
 };
 
 const HEALTH = {
     racha: "https://racha.hemk.dev/health/",
+    folio: "https://meufolio.dev",
 };
 
 // TODO: Tino entra quando estiver no ar (deploy na VM Oracle + página de produto).
@@ -42,6 +45,7 @@ export type Content = {
     role: string;
     about: string;
     ui: { email: string; themeToDark: string; themeToLight: string; langSwitch: string };
+    cv: Link;
     sections: Record<"projects" | "openSource" | "experience" | "skills" | "education", string>;
     projects: Project[];
     openSource: Project[];
@@ -58,13 +62,14 @@ export const CONTENT: Record<Lang, Content> = {
             description: "Desenvolvedor backend com Python e Django, em Joinville, SC.",
         },
         role: "Desenvolvedor Backend Júnior · Joinville, SC",
-        about: "Desenvolvedor backend com Python e Django. Desde maio de 2026 respondo pelo sistema de gestão em produção de uma empresa de Joinville, do modelo de dados ao deploy. Técnico em Desenvolvimento de Sistemas pelo SENAI e cursando Engenharia de Software na Católica SC. Hoje estudando Java e Spring Boot.",
+        about: "Desenvolvedor backend com Python e Django. Desde maio de 2026 respondo pelo sistema de gestão em produção de uma empresa de Araquari, do modelo de dados ao deploy. Técnico em Desenvolvimento de Sistemas pelo SENAI e cursando Engenharia de Software na Católica SC. Hoje estudando Java e Spring Boot.",
         ui: {
             email: "E-mail",
             themeToDark: "Ativar tema escuro",
             themeToLight: "Ativar tema claro",
             langSwitch: "Switch to English",
         },
+        cv: { label: "Baixar currículo", url: "/lucas-hemkemeier-curriculo-backend.pdf" },
         sections: {
             projects: "Projetos",
             openSource: "Open source",
@@ -84,6 +89,15 @@ export const CONTENT: Record<Lang, Content> = {
                 ],
             },
             {
+                title: "noar-badge",
+                description: "Selo de status ao vivo para README e sites: faz um GET no endpoint de saúde do app e mostra se ele está no ar e quanto tempo levou para responder. Roda na borda, com proteção contra SSRF em cada redirecionamento.",
+                stack: ["TypeScript", "Cloudflare Workers", "Vitest"],
+                links: [
+                    { label: "repositório", url: REPO.noar },
+                    { label: "status.hemk.dev", url: PROD.noar },
+                ],
+            },
+            {
                 title: "Tremzz",
                 description: "Plataforma web de gestão de operações ferroviárias: rotas, usuários e comunicação em tempo real com sensores via MQTT. Projeto em equipe da formação técnica no SENAI, em que fui responsável pela modelagem de dados, pelo backend, pelas telas, pela integração MQTT e pela montagem dos sensores.",
                 stack: ["PHP", "MySQL", "JavaScript", "MQTT"],
@@ -97,6 +111,7 @@ export const CONTENT: Record<Lang, Content> = {
             {
                 title: "folio",
                 description: "15 pull requests mergeados no folio, que gera portfólio e currículo a partir do perfil do GitHub: features, cobertura de testes, configuração de CI, tratamento de erro, correções de segurança e acessibilidade.",
+                status: HEALTH.folio,
                 links: [
                     { label: "meufolio.dev", url: "https://meufolio.dev" },
                     { label: "repositório", url: REPO.folio },
@@ -134,7 +149,7 @@ export const CONTENT: Record<Lang, Content> = {
             { label: "Linguagens", items: ["Python", "SQL", "JavaScript", "TypeScript"] },
             { label: "Back-end", items: ["Django", "Django REST Framework", "APIs REST", "JWT", "tarefas assíncronas"] },
             { label: "Banco", items: ["PostgreSQL", "MySQL", "modelagem relacional"] },
-            { label: "Testes", items: ["pytest", "factory-boy"] },
+            { label: "Testes", items: ["pytest"] },
             { label: "Infra", items: ["Docker", "GitHub Actions", "Nginx", "Linux", "Cloudflare"] },
             { label: "Front-end", items: ["Next.js", "React"] },
         ],
@@ -149,13 +164,14 @@ export const CONTENT: Record<Lang, Content> = {
             description: "Back-end developer working with Python and Django, based in Joinville, Brazil.",
         },
         role: "Junior Back-end Developer · Joinville, Brazil",
-        about: "Back-end developer working with Python and Django. Since May 2026 I have been responsible for a production management system at a company in Joinville, from the data model to deployment. Systems Development technician (SENAI) and Software Engineering student at Católica SC. Currently studying Java and Spring Boot.",
+        about: "Back-end developer working with Python and Django. Since May 2026 I have been responsible for a production management system at a company in Araquari, from the data model to deployment. Systems Development technician (SENAI) and Software Engineering student at Católica SC. Currently studying Java and Spring Boot.",
         ui: {
             email: "Email",
             themeToDark: "Switch to dark theme",
             themeToLight: "Switch to light theme",
             langSwitch: "Mudar para português",
         },
+        cv: { label: "Download résumé", url: "/lucas-hemkemeier-resume-backend.pdf" },
         sections: {
             projects: "Projects",
             openSource: "Open source",
@@ -175,6 +191,15 @@ export const CONTENT: Record<Lang, Content> = {
                 ],
             },
             {
+                title: "noar-badge",
+                description: "Live status badge for READMEs and websites: it sends a GET to the app's health endpoint and shows whether it is up and how long it took to answer. Runs at the edge, with SSRF protection on every redirect.",
+                stack: ["TypeScript", "Cloudflare Workers", "Vitest"],
+                links: [
+                    { label: "repository", url: REPO.noar },
+                    { label: "status.hemk.dev", url: PROD.noar },
+                ],
+            },
+            {
                 title: "Tremzz",
                 description: "Web platform for railway operations management: routes, users and real-time communication with sensors over MQTT. Team project from the technical program at SENAI, where I was responsible for the data model, the back-end, the screens, the MQTT integration and the sensor assembly.",
                 stack: ["PHP", "MySQL", "JavaScript", "MQTT"],
@@ -188,6 +213,7 @@ export const CONTENT: Record<Lang, Content> = {
             {
                 title: "folio",
                 description: "15 merged pull requests to folio, which generates a portfolio and résumé from a GitHub profile: features, test coverage, CI setup, error handling, security fixes and accessibility improvements.",
+                status: HEALTH.folio,
                 links: [
                     { label: "meufolio.dev", url: "https://meufolio.dev" },
                     { label: "repository", url: REPO.folio },
@@ -225,7 +251,7 @@ export const CONTENT: Record<Lang, Content> = {
             { label: "Languages", items: ["Python", "SQL", "JavaScript", "TypeScript"] },
             { label: "Back-end", items: ["Django", "Django REST Framework", "REST APIs", "JWT", "background tasks"] },
             { label: "Databases", items: ["PostgreSQL", "MySQL", "relational modeling"] },
-            { label: "Testing", items: ["pytest", "factory-boy"] },
+            { label: "Testing", items: ["pytest"] },
             { label: "Infrastructure", items: ["Docker", "GitHub Actions", "Nginx", "Linux", "Cloudflare"] },
             { label: "Front-end", items: ["Next.js", "React"] },
         ],
