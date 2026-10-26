@@ -23,6 +23,7 @@ const PROD = {
 
 const HEALTH = {
     racha: "https://racha.hemk.dev/health/",
+    folio: "https://meufolio.dev",
 };
 
 // TODO: Tino entra quando estiver no ar (deploy na VM Oracle + página de produto).
@@ -108,6 +109,7 @@ export const CONTENT: Record<Lang, Content> = {
             {
                 title: "folio",
                 description: "15 pull requests mergeados no folio, que gera portfólio e currículo a partir do perfil do GitHub: features, cobertura de testes, configuração de CI, tratamento de erro, correções de segurança e acessibilidade.",
+                status: HEALTH.folio,
                 links: [
                     { label: "meufolio.dev", url: "https://meufolio.dev" },
                     { label: "repositório", url: REPO.folio },
@@ -208,6 +210,7 @@ export const CONTENT: Record<Lang, Content> = {
             {
                 title: "folio",
                 description: "15 merged pull requests to folio, which generates a portfolio and résumé from a GitHub profile: features, test coverage, CI setup, error handling, security fixes and accessibility improvements.",
+                status: HEALTH.folio,
                 links: [
                     { label: "meufolio.dev", url: "https://meufolio.dev" },
                     { label: "repository", url: REPO.folio },
