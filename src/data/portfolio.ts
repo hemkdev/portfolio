@@ -10,8 +10,7 @@ export const PERSON = {
 const REPO = {
     racha: "https://github.com/hemkdev/racha-api",
     noar: "https://github.com/hemkdev/noar-badge",
-    tremzz: "https://github.com/hemkdev/tremzz",
-    tremzzIot: "https://github.com/hemkdev/tremzz-iot",
+    tino: "https://github.com/hemkdev/Tino",
     folio: "https://github.com/miguelrcha/folio",
     timezonefinder: "https://github.com/jannikmi/timezonefinder",
 };
@@ -19,14 +18,13 @@ const REPO = {
 const PROD = {
     racha: "https://racha.hemk.dev/api/docs/",
     noar: "https://status.hemk.dev",
+    tino: "https://discord.com/oauth2/authorize?client_id=1535474778180292628",
 };
 
 const HEALTH = {
     racha: "https://racha.hemk.dev/health/",
     folio: "https://meufolio.dev",
 };
-
-// TODO: Tino entra quando estiver no ar (deploy na VM Oracle + página de produto).
 
 export type Lang = "pt" | "en";
 
@@ -98,12 +96,12 @@ export const CONTENT: Record<Lang, Content> = {
                 ],
             },
             {
-                title: "Tremzz",
-                description: "Plataforma web de gestão de operações ferroviárias: rotas, usuários e comunicação em tempo real com sensores via MQTT. Projeto em equipe da formação técnica no SENAI, em que fui responsável pela modelagem de dados, pelo backend, pelas telas, pela integração MQTT e pela montagem dos sensores.",
-                stack: ["PHP", "MySQL", "JavaScript", "MQTT"],
+                title: "Tino",
+                description: "Finanças pessoais por conversa no Discord: você escreve o gasto como falaria (\"50 mercado, 30 uber\") e ele anota, categoriza e resume o mês. Núcleo independente do canal, dinheiro em centavos inteiros, toda query filtrada pela conta e valor fora do normal pedindo confirmação antes de gravar.",
+                stack: ["Java", "PostgreSQL", "JDA", "Flyway"],
                 links: [
-                    { label: "repositório", url: REPO.tremzz },
-                    { label: "repositório iot", url: REPO.tremzzIot },
+                    { label: "repositório", url: REPO.tino },
+                    { label: "adicionar ao Discord", url: PROD.tino },
                 ],
             },
         ],
@@ -204,12 +202,12 @@ export const CONTENT: Record<Lang, Content> = {
                 ],
             },
             {
-                title: "Tremzz",
-                description: "Web platform for railway operations management: routes, users and real-time communication with sensors over MQTT. Team project from the technical program at SENAI, where I was responsible for the data model, the back-end, the screens, the MQTT integration and the sensor assembly.",
-                stack: ["PHP", "MySQL", "JavaScript", "MQTT"],
+                title: "Tino",
+                description: "Personal finance by conversation on Discord: you type an expense the way you would say it (\"50 groceries, 30 uber\") and it records, categorizes and summarizes the month. Channel-independent core, money as integer cents, every query scoped to the account, and unusual amounts ask for confirmation before saving.",
+                stack: ["Java", "PostgreSQL", "JDA", "Flyway"],
                 links: [
-                    { label: "repository", url: REPO.tremzz },
-                    { label: "iot repository", url: REPO.tremzzIot },
+                    { label: "repository", url: REPO.tino },
+                    { label: "add to Discord", url: PROD.tino },
                 ],
             },
         ],
