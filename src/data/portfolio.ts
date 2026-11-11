@@ -67,7 +67,7 @@ export const CONTENT: Record<Lang, Content> = {
             themeToLight: "Ativar tema claro",
             langSwitch: "Switch to English",
         },
-        cv: { label: "Baixar currículo", url: "/lucas-hemkemeier-curriculo-backend.pdf" },
+        cv: { label: "Baixar currículo", url: "/lucas-hemkemeier-curriculo.pdf" },
         sections: {
             projects: "Projetos",
             openSource: "Open source",
@@ -173,7 +173,7 @@ export const CONTENT: Record<Lang, Content> = {
             themeToLight: "Switch to light theme",
             langSwitch: "Mudar para português",
         },
-        cv: { label: "Download résumé", url: "/lucas-hemkemeier-resume-backend.pdf" },
+        cv: { label: "Download résumé", url: "/lucas-hemkemeier-resume.pdf" },
         sections: {
             projects: "Projects",
             openSource: "Open source",
