@@ -19,14 +19,6 @@ ${t.role}. ${url}
 
 ${t.about}
 
-### ${t.sections.projects}
-
-${projects(t.projects)}
-
-### ${t.sections.openSource}
-
-${projects(t.openSource)}
-
 ### ${t.sections.experience}
 
 ${t.experience
@@ -36,6 +28,14 @@ ${t.experience
     return `- **${job.role}**, ${job.company}, ${job.period}${note}${bullets}`;
   })
   .join("\n")}
+
+### ${t.sections.projects}
+
+${projects(t.projects)}
+
+### ${t.sections.openSource}
+
+${projects(t.openSource)}
 
 ### ${t.sections.skills}
 

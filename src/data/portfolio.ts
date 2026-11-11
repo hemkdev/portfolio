@@ -1,6 +1,6 @@
 export const PERSON = {
     name: "Lucas Hemkemeier",
-    email: "lucas.hemkemeier007@gmail.com",
+    email: "lucashemkemeierr@gmail.com",
     github: "https://github.com/hemkdev",
     avatar: "https://github.com/hemkdev.png",
     linkedin: "https://www.linkedin.com/in/hemkemeier",
@@ -10,8 +10,7 @@ export const PERSON = {
 const REPO = {
     racha: "https://github.com/hemkdev/racha-api",
     noar: "https://github.com/hemkdev/noar-badge",
-    tremzz: "https://github.com/hemkdev/tremzz",
-    tremzzIot: "https://github.com/hemkdev/tremzz-iot",
+    tino: "https://github.com/hemkdev/Tino",
     folio: "https://github.com/miguelrcha/folio",
     timezonefinder: "https://github.com/jannikmi/timezonefinder",
 };
@@ -19,14 +18,13 @@ const REPO = {
 const PROD = {
     racha: "https://racha.hemk.dev/api/docs/",
     noar: "https://status.hemk.dev",
+    tino: "https://discord.com/oauth2/authorize?client_id=1535474778180292628",
 };
 
 const HEALTH = {
     racha: "https://racha.hemk.dev/health/",
     folio: "https://meufolio.dev",
 };
-
-// TODO: Tino entra quando estiver no ar (deploy na VM Oracle + página de produto).
 
 export type Lang = "pt" | "en";
 
@@ -59,17 +57,17 @@ export const CONTENT: Record<Lang, Content> = {
     pt: {
         meta: {
             title: "Lucas Hemkemeier — Desenvolvedor Backend",
-            description: "Desenvolvedor backend com Python e Django, em Joinville, SC.",
+            description: "Desenvolvedor backend com Python, Django e IA aplicada, em Joinville, SC.",
         },
-        role: "Desenvolvedor Backend Júnior · Joinville, SC",
-        about: "Desenvolvedor backend com Python e Django. Desde maio de 2026 respondo pelo sistema de gestão em produção de uma empresa de Araquari, do modelo de dados ao deploy. Técnico em Desenvolvimento de Sistemas pelo SENAI e cursando Engenharia de Software na Católica SC. Hoje estudando Java e Spring Boot.",
+        role: "Desenvolvedor Backend Júnior · IA aplicada · Joinville, SC",
+        about: "Desenvolvedor backend com Python e Django, com foco em IA aplicada. Sou o único dev da Origetec, onde construí e opero o sistema de gestão do modelo de dados ao deploy; técnico pelo SENAI e cursando Engenharia de Software na Católica SC.",
         ui: {
             email: "E-mail",
             themeToDark: "Ativar tema escuro",
             themeToLight: "Ativar tema claro",
             langSwitch: "Switch to English",
         },
-        cv: { label: "Baixar currículo", url: "/lucas-hemkemeier-curriculo-backend.pdf" },
+        cv: { label: "Baixar currículo", url: "/lucas-hemkemeier-curriculo.pdf" },
         sections: {
             projects: "Projetos",
             openSource: "Open source",
@@ -89,21 +87,21 @@ export const CONTENT: Record<Lang, Content> = {
                 ],
             },
             {
+                title: "Tino",
+                description: "Finanças pessoais por conversa no Discord: você escreve o gasto como falaria (\"50 mercado, 30 uber\") e ele anota, categoriza e resume o mês. Núcleo independente do canal, dinheiro em centavos inteiros, toda query filtrada pela conta e valor fora do normal pedindo confirmação antes de gravar.",
+                stack: ["Java", "PostgreSQL", "JDA", "Flyway"],
+                links: [
+                    { label: "repositório", url: REPO.tino },
+                    { label: "adicionar ao Discord", url: PROD.tino },
+                ],
+            },
+            {
                 title: "noar-badge",
                 description: "Selo de status ao vivo para README e sites: faz um GET no endpoint de saúde do app e mostra se ele está no ar e quanto tempo levou para responder. Roda na borda, com proteção contra SSRF em cada redirecionamento.",
                 stack: ["TypeScript", "Cloudflare Workers", "Vitest"],
                 links: [
                     { label: "repositório", url: REPO.noar },
                     { label: "status.hemk.dev", url: PROD.noar },
-                ],
-            },
-            {
-                title: "Tremzz",
-                description: "Plataforma web de gestão de operações ferroviárias: rotas, usuários e comunicação em tempo real com sensores via MQTT. Projeto em equipe da formação técnica no SENAI, em que fui responsável pela modelagem de dados, pelo backend, pelas telas, pela integração MQTT e pela montagem dos sensores.",
-                stack: ["PHP", "MySQL", "JavaScript", "MQTT"],
-                links: [
-                    { label: "repositório", url: REPO.tremzz },
-                    { label: "repositório iot", url: REPO.tremzzIot },
                 ],
             },
         ],
@@ -128,15 +126,17 @@ export const CONTENT: Record<Lang, Content> = {
         ],
         experience: [
             {
-                role: "Desenvolvedor Full-Stack (Django · Next.js)",
+                role: "Integrador de IA Pleno (Desenvolvedor Full-Stack)",
                 company: "Origetec",
                 period: "mai/2026 – presente",
-                note: "Cargo interno: Integrador de IA",
+                note: "Título interno; Trainee de mai a out/2026, promovido em 5 meses",
                 bullets: [
-                    "Projetei e mantenho a API REST do sistema de gestão que integra diversas áreas da empresa, usado por mais de 30 pessoas, em Django e DRF, com autenticação JWT e regras de negócio numa camada de serviço.",
-                    "Modelei o banco em PostgreSQL, com as regras críticas em constraints e bloqueio transacional onde há concorrência.",
-                    "Montei o CI/CD no GitHub Actions e opero a produção: Docker, Nginx, VM Ubuntu, Cloudflare Tunnel e Sentry.",
-                    "Integrei o sistema ao ERP legado por uma API própria, mantida como serviço separado.",
+                    "Reduzi a emissão de propostas comerciais de cerca de 4 horas para 10 minutos: a geração automatizada substituiu planilhas e um sistema legado e emite 100% das propostas de máquinas desde agosto de 2026.",
+                    "Eliminei a digitação manual de preços nas cotações de compra com a API do Claude: o fornecedor envia PDF, planilha ou foto, o LLM extrai os dados validados por schema e o comprador exporta para o ERP.",
+                    "Construí dois servidores MCP, um no sistema de gestão (116 ferramentas, OAuth 2.0) e outro na API do ERP, para agentes de IA consultarem dados e montarem cotações, propostas e vendas com as permissões do usuário. Toda escrita exige confirmação humana e é auditada.",
+                    "Conduzo o ERP da Injepress, fundição do grupo, em Java 21, Spring Boot, PostgreSQL e Next.js. Está em fase de fundação e foi desenhado AI-first: conector MCP dentro da API e OAuth 2.1.",
+                    "Projetei a API REST do sistema de gestão em Django REST Framework (JWT, camada de serviço, fila django-q2) e modelei o PostgreSQL com constraints e bloqueio de linha onde há concorrência. A integração com o ERP legado é uma API própria em FastAPI, com mais de 400 testes.",
+                    "Montei o CI/CD no GitHub Actions (mais de 4.000 testes, imagens Docker) e opero a produção com Docker Compose, Nginx, Cloudflare Tunnel e Sentry: mais de 99,9% das requisições com sucesso e p95 abaixo de 250 ms.",
                 ],
             },
             {
@@ -146,12 +146,14 @@ export const CONTENT: Record<Lang, Content> = {
             },
         ],
         skills: [
-            { label: "Linguagens", items: ["Python", "SQL", "JavaScript", "TypeScript"] },
-            { label: "Back-end", items: ["Django", "Django REST Framework", "APIs REST", "JWT", "tarefas assíncronas"] },
-            { label: "Banco", items: ["PostgreSQL", "MySQL", "modelagem relacional"] },
-            { label: "Testes", items: ["pytest"] },
-            { label: "Infra", items: ["Docker", "GitHub Actions", "Nginx", "Linux", "Cloudflare"] },
+            { label: "Linguagens", items: ["Python", "Java", "SQL", "TypeScript", "JavaScript"] },
+            { label: "Back-end", items: ["Django", "Django REST Framework", "FastAPI", "Spring Boot", "APIs REST", "JWT", "OAuth 2.0", "OpenAPI"] },
+            { label: "IA aplicada", items: ["API do Claude", "saída estruturada", "MCP", "tool use"] },
+            { label: "Banco", items: ["PostgreSQL", "MySQL", "modelagem relacional", "controle de concorrência"] },
+            { label: "Testes", items: ["pytest", "TDD"] },
+            { label: "Infra", items: ["Docker", "GitHub Actions", "Nginx", "Linux", "Cloudflare", "Sentry"] },
             { label: "Front-end", items: ["Next.js", "React"] },
+            { label: "Idiomas", items: ["português nativo", "inglês avançado (C1)"] },
         ],
         education: [
             { degree: "Bacharelado em Engenharia de Software", institution: "Católica SC", period: "fev/2026 – dez/2029 · em curso" },
@@ -161,17 +163,17 @@ export const CONTENT: Record<Lang, Content> = {
     en: {
         meta: {
             title: "Lucas Hemkemeier — Back-end Developer",
-            description: "Back-end developer working with Python and Django, based in Joinville, Brazil.",
+            description: "Back-end developer working with Python, Django and applied AI, based in Joinville, Brazil.",
         },
-        role: "Junior Back-end Developer · Joinville, Brazil",
-        about: "Back-end developer working with Python and Django. Since May 2026 I have been responsible for a production management system at a company in Araquari, from the data model to deployment. Systems Development technician (SENAI) and Software Engineering student at Católica SC. Currently studying Java and Spring Boot.",
+        role: "Junior Back-end Developer · Applied AI · Joinville, Brazil",
+        about: "Back-end developer working with Python and Django, focused on applied AI. I am the sole developer at Origetec, where I built and run the management system from the data model to deployment; Systems Development technician (SENAI) and Software Engineering student at Católica SC.",
         ui: {
             email: "Email",
             themeToDark: "Switch to dark theme",
             themeToLight: "Switch to light theme",
             langSwitch: "Mudar para português",
         },
-        cv: { label: "Download résumé", url: "/lucas-hemkemeier-resume-backend.pdf" },
+        cv: { label: "Download CV", url: "/lucas-hemkemeier-resume.pdf" },
         sections: {
             projects: "Projects",
             openSource: "Open source",
@@ -191,6 +193,15 @@ export const CONTENT: Record<Lang, Content> = {
                 ],
             },
             {
+                title: "Tino",
+                description: "Personal finance by conversation on Discord: you type an expense the way you would say it (\"50 groceries, 30 uber\") and it records, categorizes and summarizes the month. Channel-independent core, money as integer cents, every query scoped to the account, and unusual amounts ask for confirmation before saving.",
+                stack: ["Java", "PostgreSQL", "JDA", "Flyway"],
+                links: [
+                    { label: "repository", url: REPO.tino },
+                    { label: "add to Discord", url: PROD.tino },
+                ],
+            },
+            {
                 title: "noar-badge",
                 description: "Live status badge for READMEs and websites: it sends a GET to the app's health endpoint and shows whether it is up and how long it took to answer. Runs at the edge, with SSRF protection on every redirect.",
                 stack: ["TypeScript", "Cloudflare Workers", "Vitest"],
@@ -199,20 +210,11 @@ export const CONTENT: Record<Lang, Content> = {
                     { label: "status.hemk.dev", url: PROD.noar },
                 ],
             },
-            {
-                title: "Tremzz",
-                description: "Web platform for railway operations management: routes, users and real-time communication with sensors over MQTT. Team project from the technical program at SENAI, where I was responsible for the data model, the back-end, the screens, the MQTT integration and the sensor assembly.",
-                stack: ["PHP", "MySQL", "JavaScript", "MQTT"],
-                links: [
-                    { label: "repository", url: REPO.tremzz },
-                    { label: "iot repository", url: REPO.tremzzIot },
-                ],
-            },
         ],
         openSource: [
             {
                 title: "folio",
-                description: "15 merged pull requests to folio, which generates a portfolio and résumé from a GitHub profile: features, test coverage, CI setup, error handling, security fixes and accessibility improvements.",
+                description: "15 merged pull requests to folio, which generates a portfolio and CV from a GitHub profile: features, test coverage, CI setup, error handling, security fixes and accessibility improvements.",
                 status: HEALTH.folio,
                 links: [
                     { label: "meufolio.dev", url: "https://meufolio.dev" },
@@ -230,15 +232,17 @@ export const CONTENT: Record<Lang, Content> = {
         ],
         experience: [
             {
-                role: "Full-Stack Developer (Django · Next.js)",
+                role: "AI Integrator, Mid-level (Full-Stack Developer)",
                 company: "Origetec",
                 period: "May 2026 – present",
-                note: "Internal title: AI Integrator",
+                note: "Internal title; Trainee from May to Oct 2026, promoted in 5 months",
                 bullets: [
-                    "Designed and maintain the REST API for the company-wide management system, used by 30+ people across several departments, built with Django and DRF, JWT authentication and business rules in a dedicated service layer.",
-                    "Modeled the PostgreSQL database, enforcing critical rules as constraints and using transactional locking where concurrency matters.",
-                    "Built the CI/CD pipelines on GitHub Actions and run production: Docker, Nginx, Ubuntu VM, Cloudflare Tunnel and Sentry.",
-                    "Integrated the system with the legacy ERP through a separate API service I wrote and maintain.",
+                    "Cut commercial proposal issuing from about 4 hours to 10 minutes: automated generation replaced spreadsheets and a legacy system, and has issued 100% of machine proposals since August 2026.",
+                    "Eliminated manual price entry in purchase quotes with the Claude API: suppliers send a PDF, spreadsheet or photo, the LLM extracts schema-validated data and the buyer exports it to the ERP.",
+                    "Built two MCP servers, one in the management system (116 tools, OAuth 2.0) and one in the ERP API, so AI agents can query data and draft quotes, proposals and sales with the user's permissions. Every write requires human confirmation and is audited.",
+                    "Lead the ERP for Injepress, the group's foundry, in Java 21, Spring Boot, PostgreSQL and Next.js. It is in its foundation stage and designed AI-first: MCP connector inside the API and OAuth 2.1.",
+                    "Designed the management system's REST API in Django REST Framework (JWT, service layer, django-q2 queue) and modeled PostgreSQL with constraints and row locking where concurrency matters. The legacy ERP integration is a separate FastAPI service with 400+ tests.",
+                    "Built CI/CD on GitHub Actions (4,000+ tests, Docker images) and run production with Docker Compose, Nginx, Cloudflare Tunnel and Sentry: 99.9%+ successful requests and p95 under 250 ms.",
                 ],
             },
             {
@@ -248,12 +252,14 @@ export const CONTENT: Record<Lang, Content> = {
             },
         ],
         skills: [
-            { label: "Languages", items: ["Python", "SQL", "JavaScript", "TypeScript"] },
-            { label: "Back-end", items: ["Django", "Django REST Framework", "REST APIs", "JWT", "background tasks"] },
-            { label: "Databases", items: ["PostgreSQL", "MySQL", "relational modeling"] },
-            { label: "Testing", items: ["pytest"] },
-            { label: "Infrastructure", items: ["Docker", "GitHub Actions", "Nginx", "Linux", "Cloudflare"] },
+            { label: "Languages", items: ["Python", "Java", "SQL", "TypeScript", "JavaScript"] },
+            { label: "Back-end", items: ["Django", "Django REST Framework", "FastAPI", "Spring Boot", "REST APIs", "JWT", "OAuth 2.0", "OpenAPI"] },
+            { label: "Applied AI", items: ["Claude API", "structured output", "MCP", "tool use"] },
+            { label: "Databases", items: ["PostgreSQL", "MySQL", "relational modeling", "concurrency control"] },
+            { label: "Testing", items: ["pytest", "TDD"] },
+            { label: "Infrastructure", items: ["Docker", "GitHub Actions", "Nginx", "Linux", "Cloudflare", "Sentry"] },
             { label: "Front-end", items: ["Next.js", "React"] },
+            { label: "Spoken languages", items: ["Portuguese (native)", "English (advanced, C1)"] },
         ],
         education: [
             { degree: "Bachelor's in Software Engineering", institution: "Católica SC", period: "Feb 2026 – Dec 2029 · in progress" },
