@@ -173,7 +173,7 @@ export const CONTENT: Record<Lang, Content> = {
             themeToLight: "Switch to light theme",
             langSwitch: "Mudar para português",
         },
-        cv: { label: "Download résumé", url: "/lucas-hemkemeier-resume.pdf" },
+        cv: { label: "Download CV", url: "/lucas-hemkemeier-resume.pdf" },
         sections: {
             projects: "Projects",
             openSource: "Open source",
