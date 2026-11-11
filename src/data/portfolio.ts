@@ -59,8 +59,8 @@ export const CONTENT: Record<Lang, Content> = {
             title: "Lucas Hemkemeier — Desenvolvedor Backend",
             description: "Desenvolvedor backend com Python, Django e IA aplicada, em Joinville, SC.",
         },
-        role: "Desenvolvedor Backend Júnior · Joinville, SC",
-        about: "Desenvolvedor backend com Python e Django, com foco em IA aplicada. Desde maio de 2026 sou o único dev da Origetec, em Araquari: construí e opero, do modelo de dados ao deploy, o sistema de gestão usado por mais de 20 pessoas, com extração de cotações por LLM e servidores MCP que dão a agentes de IA acesso auditado ao sistema e ao ERP. Técnico em Desenvolvimento de Sistemas pelo SENAI e cursando Engenharia de Software na Católica SC.",
+        role: "Desenvolvedor Backend Júnior · IA aplicada · Joinville, SC",
+        about: "Desenvolvedor backend com Python e Django, com foco em IA aplicada. Sou o único dev da Origetec, onde construí e opero o sistema de gestão do modelo de dados ao deploy; técnico pelo SENAI e cursando Engenharia de Software na Católica SC.",
         ui: {
             email: "E-mail",
             themeToDark: "Ativar tema escuro",
@@ -87,21 +87,21 @@ export const CONTENT: Record<Lang, Content> = {
                 ],
             },
             {
-                title: "noar-badge",
-                description: "Selo de status ao vivo para README e sites: faz um GET no endpoint de saúde do app e mostra se ele está no ar e quanto tempo levou para responder. Roda na borda, com proteção contra SSRF em cada redirecionamento.",
-                stack: ["TypeScript", "Cloudflare Workers", "Vitest"],
-                links: [
-                    { label: "repositório", url: REPO.noar },
-                    { label: "status.hemk.dev", url: PROD.noar },
-                ],
-            },
-            {
                 title: "Tino",
                 description: "Finanças pessoais por conversa no Discord: você escreve o gasto como falaria (\"50 mercado, 30 uber\") e ele anota, categoriza e resume o mês. Núcleo independente do canal, dinheiro em centavos inteiros, toda query filtrada pela conta e valor fora do normal pedindo confirmação antes de gravar.",
                 stack: ["Java", "PostgreSQL", "JDA", "Flyway"],
                 links: [
                     { label: "repositório", url: REPO.tino },
                     { label: "adicionar ao Discord", url: PROD.tino },
+                ],
+            },
+            {
+                title: "noar-badge",
+                description: "Selo de status ao vivo para README e sites: faz um GET no endpoint de saúde do app e mostra se ele está no ar e quanto tempo levou para responder. Roda na borda, com proteção contra SSRF em cada redirecionamento.",
+                stack: ["TypeScript", "Cloudflare Workers", "Vitest"],
+                links: [
+                    { label: "repositório", url: REPO.noar },
+                    { label: "status.hemk.dev", url: PROD.noar },
                 ],
             },
         ],
@@ -129,7 +129,7 @@ export const CONTENT: Record<Lang, Content> = {
                 role: "Integrador de IA Pleno (Desenvolvedor Full-Stack)",
                 company: "Origetec",
                 period: "mai/2026 – presente",
-                note: "Trainee de mai a out/2026, promovido a Pleno em 5 meses",
+                note: "Título interno; Trainee de mai a out/2026, promovido em 5 meses",
                 bullets: [
                     "Reduzi a emissão de propostas comerciais de cerca de 4 horas para 10 minutos: a geração automatizada substituiu planilhas e um sistema legado e emite 100% das propostas de máquinas desde agosto de 2026.",
                     "Eliminei a digitação manual de preços nas cotações de compra com a API do Claude: o fornecedor envia PDF, planilha ou foto, o LLM extrai os dados validados por schema e o comprador exporta para o ERP.",
@@ -165,8 +165,8 @@ export const CONTENT: Record<Lang, Content> = {
             title: "Lucas Hemkemeier — Back-end Developer",
             description: "Back-end developer working with Python, Django and applied AI, based in Joinville, Brazil.",
         },
-        role: "Junior Back-end Developer · Joinville, Brazil",
-        about: "Back-end developer working with Python and Django, focused on applied AI. Since May 2026 I have been the sole developer at Origetec, in Araquari: I built and run, from the data model to deployment, the management system used by 20+ people, with LLM-based quote extraction and MCP servers that give AI agents audited access to the system and the ERP. Systems Development technician (SENAI) and Software Engineering student at Católica SC.",
+        role: "Junior Back-end Developer · Applied AI · Joinville, Brazil",
+        about: "Back-end developer working with Python and Django, focused on applied AI. I am the sole developer at Origetec, where I built and run the management system from the data model to deployment; Systems Development technician (SENAI) and Software Engineering student at Católica SC.",
         ui: {
             email: "Email",
             themeToDark: "Switch to dark theme",
@@ -193,21 +193,21 @@ export const CONTENT: Record<Lang, Content> = {
                 ],
             },
             {
-                title: "noar-badge",
-                description: "Live status badge for READMEs and websites: it sends a GET to the app's health endpoint and shows whether it is up and how long it took to answer. Runs at the edge, with SSRF protection on every redirect.",
-                stack: ["TypeScript", "Cloudflare Workers", "Vitest"],
-                links: [
-                    { label: "repository", url: REPO.noar },
-                    { label: "status.hemk.dev", url: PROD.noar },
-                ],
-            },
-            {
                 title: "Tino",
                 description: "Personal finance by conversation on Discord: you type an expense the way you would say it (\"50 groceries, 30 uber\") and it records, categorizes and summarizes the month. Channel-independent core, money as integer cents, every query scoped to the account, and unusual amounts ask for confirmation before saving.",
                 stack: ["Java", "PostgreSQL", "JDA", "Flyway"],
                 links: [
                     { label: "repository", url: REPO.tino },
                     { label: "add to Discord", url: PROD.tino },
+                ],
+            },
+            {
+                title: "noar-badge",
+                description: "Live status badge for READMEs and websites: it sends a GET to the app's health endpoint and shows whether it is up and how long it took to answer. Runs at the edge, with SSRF protection on every redirect.",
+                stack: ["TypeScript", "Cloudflare Workers", "Vitest"],
+                links: [
+                    { label: "repository", url: REPO.noar },
+                    { label: "status.hemk.dev", url: PROD.noar },
                 ],
             },
         ],
@@ -235,7 +235,7 @@ export const CONTENT: Record<Lang, Content> = {
                 role: "AI Integrator, Mid-level (Full-Stack Developer)",
                 company: "Origetec",
                 period: "May 2026 – present",
-                note: "Trainee from May to Oct 2026, promoted to mid-level in 5 months",
+                note: "Internal title; Trainee from May to Oct 2026, promoted in 5 months",
                 bullets: [
                     "Cut commercial proposal issuing from about 4 hours to 10 minutes: automated generation replaced spreadsheets and a legacy system, and has issued 100% of machine proposals since August 2026.",
                     "Eliminated manual price entry in purchase quotes with the Claude API: suppliers send a PDF, spreadsheet or photo, the LLM extracts schema-validated data and the buyer exports it to the ERP.",
