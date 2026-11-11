@@ -214,7 +214,7 @@ export const CONTENT: Record<Lang, Content> = {
         openSource: [
             {
                 title: "folio",
-                description: "15 merged pull requests to folio, which generates a portfolio and résumé from a GitHub profile: features, test coverage, CI setup, error handling, security fixes and accessibility improvements.",
+                description: "15 merged pull requests to folio, which generates a portfolio and CV from a GitHub profile: features, test coverage, CI setup, error handling, security fixes and accessibility improvements.",
                 status: HEALTH.folio,
                 links: [
                     { label: "meufolio.dev", url: "https://meufolio.dev" },
