@@ -10,7 +10,7 @@ export const PERSON = {
 const REPO = {
     racha: "https://github.com/hemkdev/racha-api",
     noar: "https://github.com/hemkdev/noar-badge",
-    tino: "https://github.com/hemkdev/Tino",
+    tino: "https://github.com/hemkdev/tino",
     folio: "https://github.com/miguelrcha/folio",
     timezonefinder: "https://github.com/jannikmi/timezonefinder",
 };
@@ -57,10 +57,10 @@ export const CONTENT: Record<Lang, Content> = {
     pt: {
         meta: {
             title: "Lucas Hemkemeier — Desenvolvedor Backend",
-            description: "Desenvolvedor backend com Python, Django e IA aplicada, em Joinville, SC.",
+            description: "Desenvolvedor backend com Java, Spring Boot, Python, Django e IA aplicada, em Joinville, SC.",
         },
         role: "Desenvolvedor Backend Júnior · IA aplicada · Joinville, SC",
-        about: "Desenvolvedor backend com Python e Django, com foco em IA aplicada. Sou o único dev da Origetec, onde construí e opero o sistema de gestão do modelo de dados ao deploy; técnico pelo SENAI e cursando Engenharia de Software na Católica SC.",
+        about: "Desenvolvedor backend com Java, Spring Boot, Python e Django, com foco em IA aplicada. Sou o único dev da Origetec, onde construí e opero o sistema de gestão do modelo de dados ao deploy e conduzo apps em Spring Boot em volta do ERP Omie; técnico pelo SENAI e cursando Engenharia de Software na Católica SC.",
         ui: {
             email: "E-mail",
             themeToDark: "Ativar tema escuro",
@@ -117,7 +117,7 @@ export const CONTENT: Record<Lang, Content> = {
             },
             {
                 title: "timezonefinder",
-                description: "Biblioteca Python de fuso horário por coordenada, com cerca de 5 milhões de downloads mensais. 4 pull requests aceitos e 2 issues resolvidas, com crédito nominal no CHANGELOG: automação do pipeline de atualização dos dados de fronteira, da detecção de versão nova ao merge automático com a integração contínua aprovada.",
+                description: "Biblioteca Python de fuso horário por coordenada, com cerca de 5 milhões de downloads mensais. 4 pull requests aceitos e 2 issues resolvidas, com crédito nominal no CHANGELOG e coautoria no artigo do JOSS: automação do pipeline de atualização dos dados de fronteira, da detecção de versão nova ao merge automático com a integração contínua aprovada.",
                 links: [
                     { label: "repositório", url: REPO.timezonefinder },
                     { label: "CHANGELOG", url: `${REPO.timezonefinder}/blob/master/CHANGELOG.rst` },
@@ -163,10 +163,10 @@ export const CONTENT: Record<Lang, Content> = {
     en: {
         meta: {
             title: "Lucas Hemkemeier — Back-end Developer",
-            description: "Back-end developer working with Python, Django and applied AI, based in Joinville, Brazil.",
+            description: "Back-end developer working with Java, Spring Boot, Python, Django and applied AI, based in Joinville, Brazil.",
         },
         role: "Junior Back-end Developer · Applied AI · Joinville, Brazil",
-        about: "Back-end developer working with Python and Django, focused on applied AI. I am the sole developer at Origetec, where I built and run the management system from the data model to deployment; Systems Development technician (SENAI) and Software Engineering student at Católica SC.",
+        about: "Back-end developer working with Java, Spring Boot, Python and Django, focused on applied AI. I am the sole developer at Origetec, where I built and run the management system from the data model to deployment and lead Spring Boot apps around the Omie ERP; Systems Development technician (SENAI) and Software Engineering student at Católica SC.",
         ui: {
             email: "Email",
             themeToDark: "Switch to dark theme",
@@ -223,7 +223,7 @@ export const CONTENT: Record<Lang, Content> = {
             },
             {
                 title: "timezonefinder",
-                description: "Python library for offline timezone lookup by coordinates, with around 5 million monthly downloads. 4 merged pull requests and 2 resolved issues, credited by name in the CHANGELOG: automation of the boundary-data update pipeline, from detecting a new release to auto-merging once CI passes.",
+                description: "Python library for offline timezone lookup by coordinates, with around 5 million monthly downloads. 4 merged pull requests and 2 resolved issues, credited by name in the CHANGELOG and co-authorship of the JOSS paper: automation of the boundary-data update pipeline, from detecting a new release to auto-merging once CI passes.",
                 links: [
                     { label: "repository", url: REPO.timezonefinder },
                     { label: "CHANGELOG", url: `${REPO.timezonefinder}/blob/master/CHANGELOG.rst` },
